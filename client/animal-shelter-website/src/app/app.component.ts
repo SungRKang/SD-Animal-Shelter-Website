@@ -14,12 +14,9 @@ import { FooterComponent } from "./footer/footer.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule, DogsComponent, RouterModule, NavBarComponent],
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, FooterComponent]
+  imports: [HttpClientModule,RouterOutlet, CommonModule, DogsComponent, RouterModule, NavBarComponent,FooterComponent],
+   
+ 
 })
 
 export class AppComponent implements OnInit {
