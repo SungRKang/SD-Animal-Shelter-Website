@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+// app.component.ts
+import { Component, OnInit } from '@angular/core';
+import { DogService } from './dogs/dog.service';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { DogsComponent } from './dogs/dog.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [HttpClientModule, CommonModule, DogsComponent],
 })
-export class AppComponent {
-  title = 'animal-shelter-website';
+
+export class AppComponent implements OnInit {
+  dogs: any[] = [];
+
+  constructor(private dogService: DogService) {}
+
+  ngOnInit(): void {
+    this.dogService.getDogs().subscribe(dogs => {
+      this.dogs = dogs;
+    });
+  }
 }
