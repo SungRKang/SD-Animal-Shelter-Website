@@ -1,58 +1,89 @@
+
+
 footer {
-    padding: 70px;
+    
     background-color: #093f52;
-    
-    
-  }
-  
- .container {
-    display: flex;
-    flex-direction: column;
-    
-  }
-  
- 
-  
-  .map {
-    flex: 1;
+    font-family: 'libre franklin';
+    color: #ffffff;
   }
 
+  .footer .container  .row{
+
+    display: flex;
+    flex:wrap;
+    align-items: start;
+    padding: 10px;
+  }
+/* 
+  .footer .map, .footer .details, .footer .hours, .footer .links {
   
+    /* padding: 10px; Optional: adds some spacing around each item 
+  } */
+
+  
+  .phone-number {
+    padding-top: 10px;
+   
+  }
+  
+
+  
+  .footer .details {
+    display: flex;
+    flex: wrap;
+    padding-left: 20px;
+    width: 150%;
+  }
+
+  .footer .hours .links{
+    color: #C1CFD4;
+  }
+
+  .address{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phone-number, .Email {
+    font-size: 12px; /* Replace with the desired font size */
+}
+
+
   .hours{
     display: flex;
+    font-size: 12px;
+    padding-right: px;
+    width: 150%;
+    line-height: 2;
+    color: #C1CFD4;
   }
 
   .hours ul{
     list-style-type: none;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    color: #ffffff;
+  
   }
 
   .links {
     display: flex;
+    width: 100%;
+    font-size: 12px;
+    padding-top: 4px;
   }
-  
+
   .links ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
   }
-  
+
   .links li {
-    font-size: 18px;
-  
     margin-bottom: 10px;
   }
-  
+
   .links a {
-    color: #bbbbbb;
+    color: #C1CFD4;
     text-decoration: none;
   }
-  
-
-  
