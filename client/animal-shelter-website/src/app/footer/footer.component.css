@@ -1,4 +1,6 @@
-
+*{
+  box-sizing: border-box;
+}
 
 footer {
     
@@ -7,13 +9,26 @@ footer {
     color: #ffffff;
   }
 
-  .footer .container  .row{
+  
+
+  .footer .container  .row {
 
     display: flex;
     flex:wrap;
-    align-items: start;
+    flex-wrap: wrap;  
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
     padding: 10px;
   }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    
+}
 /* 
   .footer .map, .footer .details, .footer .hours, .footer .links {
   
@@ -28,16 +43,19 @@ footer {
   
 
   
-  .footer .details {
+   .details  {
     display: flex;
     flex: wrap;
-    padding-left: 20px;
-    width: 150%;
+    width: fit-content;
   }
+
+
 
   .footer .hours .links{
     color: #C1CFD4;
   }
+
+
 
   .address{
     font-size: 20px;
@@ -48,12 +66,14 @@ footer {
     font-size: 12px; /* Replace with the desired font size */
 }
 
+  
 
   .hours{
     display: flex;
     font-size: 12px;
     padding-right: px;
-    width: 150%;
+    /* flex: 1 1 auto; Flex grow, shrink, and basis set to auto */
+    width: fit-content;
     line-height: 2;
     color: #C1CFD4;
   }
@@ -65,9 +85,13 @@ footer {
   
   }
 
+  .links .table1:first-child {
+  margin-right: 10px; /* Adjust the value to increase or decrease the space */
+}
+
   .links {
     display: flex;
-    width: 100%;
+    width: fit-content;
     font-size: 12px;
     padding-top: 4px;
   }
@@ -87,3 +111,6 @@ footer {
     color: #C1CFD4;
     text-decoration: none;
   }
+
+  
+  
