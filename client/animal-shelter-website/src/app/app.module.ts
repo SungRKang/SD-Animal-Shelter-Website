@@ -8,18 +8,18 @@ import { DogService } from './dogs/dog.service'; // Adjust the path as necessary
 
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent
     // Don't declare DogsComponent here since it's declared in DogsModule
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    AppRoutingModule,
   ],
   providers: [DogService],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
