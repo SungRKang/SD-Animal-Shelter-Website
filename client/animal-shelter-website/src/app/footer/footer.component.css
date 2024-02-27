@@ -56,14 +56,18 @@ footer {
   }
 
 
-
+  .details{
+    
+  }
   .address{
+    width: 50%;
     font-size: 20px;
     padding-bottom: 20px;
   }
 
   .phone-number, .Email {
     font-size: 12px; /* Replace with the desired font size */
+    
 }
 
   
