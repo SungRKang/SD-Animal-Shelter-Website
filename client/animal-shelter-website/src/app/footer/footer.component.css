@@ -4,11 +4,9 @@
 
 footer {
     
- 
-    font-family: 'libre franklin';
     background-color: #093f52;
+    font-family: 'libre franklin';
     color: #ffffff;
-    margin: 0;
   }
 
   
@@ -39,7 +37,7 @@ footer {
 
   
   .phone-number {
-    padding-top: 110px;
+    padding-top: 10px;
    
   }
   
@@ -83,7 +81,6 @@ footer {
   .hours ul{
     list-style-type: none;
     display: flex;
-  
     flex-direction: column;
   
   }
@@ -101,8 +98,8 @@ footer {
 
   .links ul {
     list-style-type: none;
- 
-   
+    padding: 0;
+    display: flex;
     flex-direction: column;
   }
 
