@@ -4,9 +4,8 @@
 
 footer {
     
- 
-    font-family: 'libre franklin';
     background-color: #093f52;
+    font-family: 'libre franklin';
     color: #ffffff;
     width: 1440px;
   
@@ -99,7 +98,6 @@ footer {
   .hours ul{
     list-style-type: none;
     display: flex;
-  
     flex-direction: column;
   
   }
