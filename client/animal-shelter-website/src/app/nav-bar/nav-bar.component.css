@@ -3,9 +3,9 @@
     background-color: #093F52;
     color: white;
     text-align: right;
-    padding: 10px;
+    padding: 0.625rem;
     overflow: hidden;
-    padding: 20px 20px;
+    padding: 1.25rem 1.25rem;
 }
 .mainNav {
   overflow: hidden;
@@ -17,9 +17,10 @@
   float: left;
   color: white;
   text-align: center;
-  padding: 30px 38px;
+  padding: 1.875rem 1.875rem;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -31,13 +32,13 @@
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 0.875rem 1rem;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-  padding: 30px 38px;
+  padding: 1.875rem 1.875rem;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 .mainNav a:hover, .dropdown:hover .dropdown-header {
@@ -48,20 +49,19 @@
   display: none;
   position: absolute;
   background-color: #093F52;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 12.5rem;
   z-index: 1;
 }
 
 .dropdown-content a {
   float: none;
   color: white;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   display: block;
   text-align: center;
   font-family: "Libre_Baskerville";
-  font-size: 14px;
+  font-size: 1rem;
 
 }
 
@@ -74,9 +74,8 @@
 }
 
   .whiteNav{
-    padding: 14px 16px;
+    padding: 0.875rem 1rem;
     text-decoration: none;
-    font-size: 17px;
     overflow: hidden;
   }
 
@@ -85,23 +84,36 @@
     color: white;
     float: right;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-align: center;
-    padding: 10px 20px;
+    padding: 0.645rem 1.25rem;
     border-radius: 10px;
     border-color: white;
-    margin-top: 28.5px;
-    margin-bottom: 28.5px;
-    margin-right: 28.5px;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    margin-right: 1.75rem;
+    font-family: 'Libre_Franklin';
 
   }
 
   .scrollbar{
     color: grey;
-    height:120px;
+    height:7.5rem;
     overflow:scroll;
     overflow-x:hidden;
   }
+  
+  .socialmedia {
+    height: 1.25rem; 
+    width: 1.25rem; 
+    margin-left: 0.625rem;
+  }
 
+  .logo{
+    height: 6.25rem; 
+    width: 15.625rem; 
+    margin-left: 1.25rem; 
+    cursor: pointer;
+  }
 
 
