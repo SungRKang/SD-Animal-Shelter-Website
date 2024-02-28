@@ -16,17 +16,16 @@ footer {
     display: flex;
     flex:wrap;
     flex-wrap: wrap;  
-    justify-content: space-between;
+
     align-items: flex-start;
-    height: auto;
-    width: 100%;
+    
     padding: 10px;
   }
 
   .row {
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
+    
     
 }
 /* 
@@ -42,11 +41,21 @@ footer {
   }
   
 
-  
+  .footer > .container > .row > div:not(:last-child) {
+    margin-right: 20px; /* Adjust based on your spacing preference */
+    
+  }
+
+  .information {
+    width:40%;
+    padding-left: 10px;
+  }
+
    .details  {
     display: flex;
     flex: wrap;
     width: fit-content;
+    
   }
 
 
@@ -56,9 +65,7 @@ footer {
   }
 
 
-  .details{
-    
-  }
+ 
   .address{
     width: 50%;
     font-size: 20px;
@@ -75,11 +82,12 @@ footer {
   .hours{
     display: flex;
     font-size: 12px;
-    padding-right: px;
+    
     /* flex: 1 1 auto; Flex grow, shrink, and basis set to auto */
     width: fit-content;
     line-height: 2;
     color: #C1CFD4;
+    padding-left: 10px;
   }
 
   .hours ul{
@@ -98,11 +106,13 @@ footer {
     width: fit-content;
     font-size: 12px;
     padding-top: 4px;
+    padding-left: 10px;
   }
 
   .links ul {
     list-style-type: none;
-    padding: 0;
+
+    line-height: 2;
     display: flex;
     flex-direction: column;
   }
