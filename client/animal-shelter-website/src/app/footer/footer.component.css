@@ -16,16 +16,16 @@ footer {
     display: flex;
     flex:wrap;
     flex-wrap: wrap;  
-
+    justify-content: space-between;
     align-items: flex-start;
     
-    padding: 10px;
+    padding: 0.625rem;
   }
 
   .row {
     display: flex;
     flex-wrap: wrap;
-    
+    width: fit-content;
     
 }
 /* 
@@ -35,27 +35,34 @@ footer {
   } */
 
   
+
+  
   .phone-number {
-    padding-top: 10px;
-   
+    padding-top: 3rem;
+    
   }
   
 
-  .footer > .container > .row > div:not(:last-child) {
-    margin-right: 20px; /* Adjust based on your spacing preference */
-    
+  
+   .details  {
+    display: flex;
+    flex: wrap;
+    width: fit-content;
   }
 
-  .information {
-    width:40%;
-    padding-left: 10px;
+  
+
+  .information{
+    width: 15rem;
+    padding-left: 1rem;
+
   }
+  
 
    .details  {
     display: flex;
     flex: wrap;
     width: fit-content;
-    
   }
 
 
@@ -67,13 +74,11 @@ footer {
 
  
   .address{
-    width: 50%;
-    font-size: 20px;
-    padding-bottom: 20px;
+    font-size: 1.25rem;
   }
 
   .phone-number, .Email {
-    font-size: 12px; /* Replace with the desired font size */
+    font-size: 0.75rem; /* Replace with the desired font size */
     
 }
 
@@ -81,13 +86,13 @@ footer {
 
   .hours{
     display: flex;
-    font-size: 12px;
-    
+    font-size: 0.75rem;
+    padding-top: 0.3rem;
+
     /* flex: 1 1 auto; Flex grow, shrink, and basis set to auto */
     width: fit-content;
     line-height: 2;
     color: #C1CFD4;
-    padding-left: 10px;
   }
 
   .hours ul{
@@ -97,28 +102,26 @@ footer {
   
   }
 
-  .links .table1:first-child {
-  margin-right: 10px; /* Adjust the value to increase or decrease the space */
-}
+  
 
   .links {
     display: flex;
     width: fit-content;
-    font-size: 12px;
-    padding-top: 4px;
-    padding-left: 10px;
+    font-size: 0.75rem;
+    padding-top: 0.3rem;
+    /* padding-right: 0.5rem; */
   }
 
   .links ul {
     list-style-type: none;
-
-    line-height: 2;
+    margin-left: 1rem;
+    line-height: 1rem;
     display: flex;
     flex-direction: column;
   }
 
   .links li {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;  
   }
 
   .links a {
@@ -127,4 +130,17 @@ footer {
   }
 
   
-  
+  .top {
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    /* margin-right: 5rem ; */
+    height: 2.5rem; 
+    /* visual styling */
+    text-decoration: none;
+    float: right;
+    padding:  0.525rem .925rem;
+    font-family: sans-serif;
+    color: #fff;
+    background: #FAB41B;
+    border-radius: 50%;
+  }
