@@ -78,7 +78,21 @@ footer {
     display: flex;
     flex: wrap;
     width: fit-content;
-    
+  }
+
+  
+
+  .information{
+    width: 15rem;
+    padding-left: 1rem;
+
+  }
+  
+
+   .details  {
+    display: flex;
+    flex: wrap;
+    width: fit-content;
   }
 
 
@@ -109,7 +123,6 @@ footer {
     width: fit-content;
     line-height: 2;
     color: #C1CFD4;
-    padding-left: 10px;
   }
 
   .hours ul{
