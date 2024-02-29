@@ -1,0 +1,22 @@
+// Define color variables based on role
+$primary-color: #093F52; // Main color for site
+$accent-color: #FAB41B;  // Color used for accents and highlights
+$secondary-color: #51a6ad; // Secondary color 
+$interactive-color: #00868B; // Color for interactive elements like popouts and links
+
+// Use the variables for class definitions
+.primary-color {
+    color: $primary-color;
+}
+
+.accent-color {
+    color: $accent-color;
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+
+.interactive-color {
+    color: $interactive-color;
+}
