@@ -65,11 +65,6 @@ h1, h2, h3 {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
 }
-h1, h2, h3 {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: bold;
-}
-
 
 h1 {
   font-size: 2rem;
@@ -92,10 +87,6 @@ h3 {
   font-size: 1.2rem;
 }
 
-.baskerville {
-  font-family: "Libre Baskerville", serif;
-  font-weight: normal;
-}
 
 .bold-baskerville {
   font-family: "Libre Baskerville", serif;
