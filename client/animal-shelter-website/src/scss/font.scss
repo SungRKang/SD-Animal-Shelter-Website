@@ -1,0 +1,42 @@
+// Define font family names as variables for easy updates and maintenance
+$font-family-libre-franklin: 'Libre Franklin', sans-serif;
+$font-family-libre-baskerville: 'Libre Baskerville', serif;
+
+// Mixins for font face declarations to avoid repetition
+@mixin font-face($font-family, $font-path, $font-weight, $font-style: normal) {
+    @font-face {
+        font-family: $font-family;
+        src: url($font-path) format('truetype');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+// Include font-face declarations using mixins
+@include font-face($font-family-libre-franklin, 'assets/fonts/Libre_Franklin/static/LibreFranklin-Regular.ttf', normal);
+@include font-face($font-family-libre-franklin, 'assets/fonts/Libre_Franklin/static/LibreFranklin-Bold.ttf', bold);
+@include font-face($font-family-libre-baskerville, 'assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf', normal);
+@include font-face($font-family-libre-baskerville, 'assets/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf', bold);
+
+// Base body style
+.body {
+    font-family: $font-family-libre-baskerville;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+// Heading styles
+h1, h2, h3 {
+    font-family: $font-family-libre-franklin;
+    font-weight: bold;
+}
+
+h1 { font-size: 2rem; } // Larger size for main titles
+h2 { font-size: 1.5rem; } // Mid-size for subsection titles or names
+h3 { font-size: 1.2rem; } // Default size for less important titles
+
+// Additional text style classes for different font weights
+.baskerville { font-family: $font-family-libre-baskerville; font-weight: normal; }
+.bold-baskerville { font-family: $font-family-libre-baskerville; font-weight: bold; }
+.franklin { font-family: $font-family-libre-franklin; font-weight: normal; }
+.bold-franklin { font-family: $font-family-libre-franklin; font-weight: bold; }
