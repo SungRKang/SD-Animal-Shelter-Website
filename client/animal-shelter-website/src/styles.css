@@ -14,87 +14,69 @@
   color: #00868B;
 }
 
+.primary-color {
+  color: #093F52;
+}
+
+.accent-color {
+  color: #FAB41B;
+}
+
+.secondary-color {
+  color: #51a6ad;
+}
+
+.interactive-color {
+  color: #00868B;
+}
+
 @font-face {
   font-family: "Libre Franklin", sans-serif;
   src: url("assets/fonts/Libre_Franklin/static/LibreFranklin-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-family: "Libre Franklin", sans-serif;
-  src: url("assets/fonts/Libre_Franklin/static/LibreFranklin-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  
 }
 @font-face {
   font-family: "Libre Franklin", sans-serif;
   src: url("assets/fonts/Libre_Franklin/static/LibreFranklin-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
-  font-family: "Libre Franklin", sans-serif;
-  src: url("assets/fonts/Libre_Franklin/static/LibreFranklin-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+ 
 }
 @font-face {
   font-family: "Libre Baskerville", serif;
   src: url("assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-family: "Libre Baskerville", serif;
-  src: url("assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  
 }
 @font-face {
   font-family: "Libre Baskerville", serif;
   src: url("assets/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
-  font-family: "Libre Baskerville", serif;
-  src: url("assets/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
 }
-.body {
-  font-family: "Libre Baskerville", serif;
-  font-weight: normal;
-  font-size: 0.9rem;
-}
+
 .body {
   font-family: "Libre Baskerville", serif;
   font-weight: normal;
   font-size: 0.9rem;
 }
 
-h1, h2, h3 {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: bold;
-}
+
 h1, h2, h3 {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
 }
 
-h1 {
-  font-size: 2rem;
-}
+
 h1 {
   font-size: 2rem;
 }
 
 h2 {
   font-size: 1.5rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.baskerville {
-  font-family: "Libre Baskerville", serif;
-  font-weight: normal;
 }
 
 h3 {
@@ -107,16 +89,10 @@ h3 {
 }
 
 .bold-baskerville {
-  font-family: "Libre Baskerville", serif;
-  font-weight: bold;
-  font-family: "Libre Baskerville", serif;
-  font-weight: bold;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold; 
 }
 
-.franklin {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: normal;
-}
 .franklin {
   font-family: "Libre Franklin", sans-serif;
   font-weight: normal;
@@ -125,9 +101,21 @@ h3 {
 .bold-franklin {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: bold;
 }
 
-/*# sourceMappingURL=styles.css.map */
-/*# sourceMappingURL=styles.css.map */
+/*begin palette*/
+
+.primary-color {
+    color: #093F52; /* dark blue */
+}
+.accent-color {
+    color: #FAB41B; /* Mustard */
+}
+
+.secondary-blue-color {
+    color: #51a6ad; /* light blue */
+}
+
+.teal-color {
+    color: #00868B; /* blue */
+}
