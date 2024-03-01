@@ -7,23 +7,23 @@ footer {
     background-color: #093f52;
     font-family: 'libre franklin';
     color: #ffffff;
-    width: 1440px;
-  
+    width: 100%;
   }
 
   
 
   .footer .container  .row {
-
     display: flex;
     flex-wrap: wrap;  
-    width: 1440px;
+    width: 100%;
     align-items: flex-start;
     padding: 0.625rem;
+    
 
   }
 
   .row {
+    
     display: flex;
     flex-wrap: wrap;
     
