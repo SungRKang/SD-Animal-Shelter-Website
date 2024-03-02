@@ -1,12 +1,13 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouteReuseStrategy, RouterLink, RouterOutlet } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterOutlet, RouterLink],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
