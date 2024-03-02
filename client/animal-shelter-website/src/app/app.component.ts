@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { DogsComponent } from './dogs/dog.component';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { AdotablePetsComponent } from './adotable-pets/adotable-pets.component';
+import { AdoptablePetsComponent } from './adoptable-pets/adoptable-pets.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AdoptablePetsComponent } from './adoptable-pets/adoptable-pets.component';
