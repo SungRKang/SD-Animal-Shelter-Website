@@ -12,6 +12,7 @@ import { OtherRescuesComponent } from './other-rescues/other-rescues.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { AvailablePetsComponent } from './available-pets/available-pets.component';
 import { RecentAdoptionsComponent } from './recent-adoptions/recent-adoptions.component';
+import { SponsorsComponent } from './sponsors/sponsors.component';
 
 
 export const routes: Routes = [
@@ -25,6 +26,8 @@ export const routes: Routes = [
   { path: 'resources', component: ResourcesComponent},
   { path: 'available-pets', component: AvailablePetsComponent},
   { path: 'recent-adoptions', component: RecentAdoptionsComponent},
+  { path: 'sponsors', component: SponsorsComponent},
+
 
 
 ];
