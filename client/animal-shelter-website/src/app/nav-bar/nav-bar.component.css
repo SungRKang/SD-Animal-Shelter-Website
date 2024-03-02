@@ -71,7 +71,8 @@
   text-decoration: none;
   display: block;
   text-align: center;
-  font-family: "Libre_Baskerville";
+  font-family: "Libre Baskerville", serif;
+  font-weight: normal;
   font-size: 1rem;
 
 }
@@ -106,7 +107,8 @@
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
     margin-right: 1.75rem;
-    font-family: 'Libre_Franklin';
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
 
   }
 
