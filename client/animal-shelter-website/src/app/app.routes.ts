@@ -1,5 +1,3 @@
-// app.routes.ts
-
 import { RouterModule, Routes } from '@angular/router';
 import { DogsComponent } from './dogs/dog.component';
 import { HomeComponent } from './home/home.component';
