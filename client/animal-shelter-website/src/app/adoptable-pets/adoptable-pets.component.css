@@ -19,7 +19,12 @@
     background-color: white;
     cursor: pointer;
     margin-top: 1rem;
-    width: 15rem;
+    width: 12rem;
+    height: max-content;
+    align-items: center;
+    text-align: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 1rem;
 }
 
 .dropdown button{
@@ -33,10 +38,10 @@
 
 
 
-
 .filteringButtonGroup a{
-    text-align: center;
     color: black;
+    text-align: center;
+    font-family: "Libre Franklin", sans-serif;
 }
 
 .filteringButtonGroup :hover{
