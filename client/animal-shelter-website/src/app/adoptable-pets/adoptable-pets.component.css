@@ -1,0 +1,51 @@
+.pageHeader{
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.filteringButtonGroup {
+    overflow:hidden;
+    flex-direction: row;
+    display: flex;
+
+}
+
+.dropdown{
+    border-radius: .35rem;
+    border: .125rem solid #3E83Af;
+    margin-right: 3rem;
+    padding: 0.5rem 4rem;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 15rem;
+}
+
+.dropdown button{
+    max-width: 15rem;
+    max-height: max-content;
+    
+}
+.dropdown :hover{
+    background-color: #FAB41B;
+}
+
+
+
+
+.filteringButtonGroup a{
+    text-align: center;
+    color: black;
+}
+
+.filteringButtonGroup :hover{
+    text-decoration: underline;
+}
+
+.filter-content{
+    overflow: hidden;
+    position: fixed;
+}
+
+
