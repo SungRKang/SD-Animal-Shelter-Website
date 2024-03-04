@@ -17,7 +17,7 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 
 export const routes: Routes = [
   { path: 'dogs', component: DogsComponent },
-  { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutUsComponent},
   { path: 'adoptable-pets', component: AdoptablePetsComponent},
   { path: 'surrendering-pet', component: SurrenderingPetComponent},
