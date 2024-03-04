@@ -54,10 +54,7 @@
   font-weight: bold;
   font-style: normal;
 }
-.body {
-  font-family: "Libre Baskerville", serif;
-  font-weight: normal;
-  font-size: 0.9rem;
+
 .body {
   font-family: "Libre Baskerville", serif;
   font-weight: normal;
@@ -67,19 +64,17 @@
 h1, h2, h3 {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
+}
 h1, h2, h3 {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
 }
 
-h1 {
-  font-size: 2rem;
+
 h1 {
   font-size: 2rem;
 }
 
-h2 {
-  font-size: 1.5rem;
 h2 {
   font-size: 1.5rem;
 }
@@ -109,9 +104,7 @@ h3 {
   font-weight: bold;
 }
 
-.franklin {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: normal;
+
 .franklin {
   font-family: "Libre Franklin", sans-serif;
   font-weight: normal;
