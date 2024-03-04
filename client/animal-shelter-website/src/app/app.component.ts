@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { DogsComponent } from './dogs/dog.component';
 import { RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+
 import { AdoptablePetsComponent } from './adoptable-pets/adoptable-pets.component';
 
 @Component({
@@ -13,7 +15,7 @@ import { AdoptablePetsComponent } from './adoptable-pets/adoptable-pets.componen
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule, DogsComponent, RouterModule, NavBarComponent, AdoptablePetsComponent],
+  imports: [HttpClientModule, CommonModule, DogsComponent, RouterModule, NavBarComponent,FooterComponent, AdoptablePetsComponent],
 })
 
 export class AppComponent implements OnInit {
