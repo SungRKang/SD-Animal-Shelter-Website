@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   dogs: any[] = [];
 
   constructor(private dogService: DogService) {}
