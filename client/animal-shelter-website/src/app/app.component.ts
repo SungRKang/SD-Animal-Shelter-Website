@@ -16,14 +16,11 @@ import { FooterComponent } from "./footer/footer.component";
   styleUrls: ['./app.component.css'],
   standalone: true,
 
-  imports: [HttpClientModule, CommonModule, DogsComponent, RouterModule, FooterComponent,RouterOutlet ,CommonModule, NavBarComponent],
-    
+  imports: [HttpClientModule, CommonModule, DogsComponent, RouterModule, FooterComponent,RouterOutlet ,CommonModule, NavBarComponent]
 })
 
 export class AppComponent implements OnInit {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
+
   title(title: any) {
     throw new Error('Method not implemented.');
   }

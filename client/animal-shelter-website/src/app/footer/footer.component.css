@@ -1,177 +1,167 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-footer {
-    
-    background-color: #093f52;
-    font-family: 'libre franklin';
-    color: #ffffff;
-    width: 100%;
-  }
-
-  
-
-  .footer .container  .row {
-    display: flex;
-    flex-wrap: wrap;  
-    width: 100%;
-    align-items: flex-start;
-    padding: 0.625rem;
-    
-
-  }
-
-  .row {
-    
-    display: flex;
-    flex-wrap: wrap;
-    
+.footer {
+  overflow: hidden;
+  background-color: #093f52;
+  font-family: 'libre franklin';
+  color: #ffffff;
+  width: 100%;
 }
-/* 
-  .footer .map, .footer .details, .footer .hours, .footer .links {
-  
-    /* padding: 10px; Optional: adds some spacing around each item 
-  } */
 
-  
+.footer .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+  padding: 0.625rem;
+}
 
-  
-  .phone-number {
-    padding-top: 3rem;
-    
-  }
-  
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  
-   .details  {
-    display: flex;
-    flex: wrap;
+.phone-number {
+  padding-top: 3rem;
+}
+
+.details {
+  block-size: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map {
+  width: fit-content;
+}
+
+.information {
+  width: 15rem;
+  padding-left: 1rem;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+.information {
+  width: 15rem;
+  padding-left: 1rem;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+.footer .hours .links {
+  color: #C1CFD4;
+}
+
+.address {
+  font-size: 1.25rem;
+}
+
+.phone-number, .Email {
+  font-size: 0.75rem;
+}
+
+.hours {
+  display: flex;
+  font-size: 0.75rem;
+  padding-top: 0.3rem;
+  width: fit-content;
+  line-height: 2;
+  color: #C1CFD4;
+}
+
+.hours ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  width: fit-content;
+  font-size: 0.75rem;
+  padding-top: 0.3rem;
+}
+
+.links ul {
+  list-style-type: none;
+  margin-left: 1rem;
+  line-height: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.links li {
+  margin-bottom: 0.625rem;
+}
+
+.links a {
+  color: #C1CFD4;
+  text-decoration: none;
+}
+
+.top {
+  margin-top: 0.5rem;
+  margin-left: 7rem;
+  height: 2.5rem;
+  text-decoration: none;
+  float: right;
+  padding: 0.525rem 0.925rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: #FAB41B;
+  border-radius: 50%;
+}
+
+@media (max-width: 48rem) { /* 768px/16px = 48rem */
+  .footer .container .row, .details {
+    flex-direction: column;
+    align-items: center;
   }
 
   .map{
-    width: fit-content;
+    align-items: center;
+  }
+  .details  {
+    text-align: left;
+    margin: 0;
+    padding: 0;
   }
 
-  .information{
-    padding-left: 1rem;
+  .tableH{
+    padding: 0;
 
   }
-  
-
-   .details  {
-    display: flex;
-    flex: wrap;
-    width: fit-content;
+  .links  {
+   width: 100%;
   }
-
-  
-
-  .information{
-    width: 15rem;
-    padding-left: 1rem;
-
+  .table2 {
+    margin-left: 0;
+    padding: 0; /* This line ensures all padding is removed */
   }
-  
-
-   .details  {
-    display: flex;
-    flex: wrap;
-    width: fit-content;
-  }
-
-  
-
-  .information{
-    width: 15rem;
-    padding-left: 1rem;
-
-  }
-  
-
-   .details  {
-    display: flex;
-    flex: wrap;
-    width: fit-content;
-  }
-
-
-
-  .footer .hours .links{
-    color: #C1CFD4;
-  }
-
-
- 
-  .address{
-    font-size: 1.25rem;
-  }
-
-  .phone-number, .Email {
-    font-size: 0.75rem; /* Replace with the desired font size */
+/* 
+  .hours .t , .links {
+    text-align: left;
     
-}
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+    width: 100%;
+  } */
 
-  
-
-  .hours{
-    display: flex;
-    font-size: 0.75rem;
-    padding-top: 0.3rem;
-
-    /* flex: 1 1 auto; Flex grow, shrink, and basis set to auto */
-    width: fit-content;
-    line-height: 2;
-    color: #C1CFD4;
-  }
-
-  .hours ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-  
-  }
-
-  
-
-  .links {
-    display: flex;
-    width: fit-content;
-    font-size: 0.75rem;
-    padding-top: 0.3rem;
-    /* padding-right: 0.5rem; */
-  }
-
-  .links ul {
-    list-style-type: none;
-    margin-left: 1rem;
-    line-height: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .links li {
-    margin-bottom: 0.625rem;  
-  }
-
-  .links a {
-    color: #C1CFD4;
-    text-decoration: none;
-  }
-
-  
   .top {
-    margin-top: 0.5rem;
-    margin-left: 7rem;
-    /* margin-right: 5rem ; */
-    height: 2.5rem; 
-    /* visual styling */
-    text-decoration: none;
-    float: right;
-    padding:  0.525rem .925rem;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #fff;
-    background: #FAB41B;
-    border-radius: 50%;
+    margin: 1.25rem auto;
+    display: block;
   }
+}

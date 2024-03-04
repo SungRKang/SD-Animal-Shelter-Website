@@ -2,7 +2,7 @@
   "dependencies": {
     "@angular/platform-server": "^17.2.1",
     "@angular/router": "^17.2.1",
-    "bootstrap": "^4.6.2",
+    "bootstrap": "^4.6.0",
     "i": "^0.3.7"
   }
 }
