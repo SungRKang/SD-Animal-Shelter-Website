@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .footer {
+    overflow: hidden;
+    background-color: #093f52;
+    font-family: 'libre franklin';
+    color: #ffffff;
+    width: 100%;
+  }
+  
+  .footer .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0.625rem;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .phone-number {
+    padding-top: 3rem;
+  }
+  
+  .details {
+    block-size: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .map {
+    width: fit-content;
+  }
+  
+  .information {
+    width: 15rem;
+    padding-left: 1rem;
+  }
+  
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+  
+  .information {
+    width: 15rem;
+    padding-left: 1rem;
+  }
+  
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+  
+  .footer .hours .links {
+    color: #C1CFD4;
+  }
+  
+  .address {
+    font-size: 1.25rem;
+  }
+  
+  .phone-number, .Email {
+    font-size: 0.75rem;
+  }
+  
+  .hours {
+    display: flex;
+    font-size: 0.75rem;
+    padding-top: 0.3rem;
+    width: fit-content;
+    line-height: 2;
+    color: #C1CFD4;
+  }
+  
+  .hours ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .links {
+    display: flex;
+    width: fit-content;
+    font-size: 0.75rem;
+    padding-top: 0.3rem;
+  }
+  
+  .links ul {
+    list-style-type: none;
+    margin-left: 1rem;
+    line-height: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .links li {
+    margin-bottom: 0.625rem;
+  }
+  
+  .links a {
+    color: #C1CFD4;
+    text-decoration: none;
+  }
+  
+  .top {
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    height: 2.5rem;
+    text-decoration: none;
+    float: right;
+    padding: 0.525rem 0.925rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background: #FAB41B;
+    border-radius: 50%;
+  }
+  
+  @media (max-width: 48rem) { /* 768px/16px = 48rem */
+    .footer .container .row, .details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .map{
+      align-items: center;
+    }
+    .details  {
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .tableH{
+      padding: 0;
+  
+    }
+    .links  {
+     width: 100%;
+    }
+    .table2 {
+      margin-left: 0;
+      padding: 0; /* This line ensures all padding is removed */
+    }
+  /* 
+    .hours .t , .links {
+      text-align: left;
+      
+      margin: 0;
+      padding: 0;
+      margin-left: 0;
+      width: 100%;
+    } */
+  
+    .top {
+      margin: 1.25rem auto;
+      display: block;
+    }
+  }
+  
