@@ -4,8 +4,7 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-sponsor-detail',
   templateUrl: './sponsor-detail.component.html',
-  styleUrls: ['./sponsor-detail.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./sponsor-detail.component.css']
 })
 export class SponsorDetailComponent {
   constructor(
