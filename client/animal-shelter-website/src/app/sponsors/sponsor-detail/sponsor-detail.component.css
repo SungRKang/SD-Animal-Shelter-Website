@@ -1,0 +1,61 @@
+/* sponsor-detail.component.css */
+
+/* Target the Angular Material dialog content */
+app-sponsor-detail .mat-dialog-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+}
+
+/* Style the image within the dialog content */
+app-sponsor-detail .mat-dialog-content img {
+  /* This will likely need to be more specific to override Angular Material styles */
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  width: 120px; /* Adjust the size as necessary */
+  height: auto;
+}
+
+/* Target the Angular Material dialog title */
+app-sponsor-detail .mat-dialog-title {
+  color: #e53935; /* Adjust the color to match the logo red */
+  margin-top: 20px;
+  font-size: 24px; /* Adjust the size as necessary */
+}
+
+/* Style the paragraph within the dialog content */
+app-sponsor-detail .mat-dialog-content p {
+  color: #666; /* Adjust the color for the paragraph text */
+  font-size: 16px; /* Adjust the size as necessary */
+  margin-top: 10px;
+}
+
+/* Target the Angular Material dialog actions */
+app-sponsor-detail .mat-dialog-actions {
+  text-align: right;
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #eee; /* Adjust color as necessary */
+}
+
+/* Style the Angular Material button */
+app-sponsor-detail button.mat-button {
+  background-color: #e53935; /* Adjust the background color to match the logo red */
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style the hover state of the Angular Material button */
+app-sponsor-detail button.mat-button:hover {
+  background-color: #d32f2f; /* Darken the red color a bit on hover */
+}

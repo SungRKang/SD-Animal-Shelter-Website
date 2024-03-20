@@ -27,22 +27,45 @@
 }
 
 .sponsor-title {
-  text-align: center;
+  padding-left: 10%;
+  text-align: left;
   margin: 20px 0;
   font-size: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .sponsor-section {
-  /* background-image: url("assets/backgrounds/Cute-dogs.jpg"); */
+  background-image: url("/assets/backgrounds/Cute-dogs.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center 20%;
   text-align: left;
   padding: 50px 0;
+  position: relative;
+  
 }
 
+.sponsor-section:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+  pointer-events: none; /* Allows clicking through the overlay */
+  z-index: 1;
+}
+
+
 .sponsor-thank-you {
-  color: black;
-  margin: 0 auto;
+  padding-left: 10%;
+  color: #093F52;
+  margin: 0;
   max-width: 800px;
   font-size: 25px;
+  position: relative;
+  z-index: 2;
+  text-align: left;
 }
