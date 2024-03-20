@@ -8,6 +8,7 @@
     overflow:hidden;
     flex-direction: row;
     display: flex;
+    align-items: center;
 
 }
 
@@ -42,6 +43,7 @@
     color: black;
     text-align: center;
     font-family: "Libre Franklin", sans-serif;
+    align-items: center;
 }
 
 .filteringButtonGroup :hover{
