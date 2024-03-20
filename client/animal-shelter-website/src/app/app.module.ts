@@ -9,6 +9,9 @@ import { DogService } from './dogs/dog.service'; // Adjust the path as necessary
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { AppRoutingModule } from './app.routes';
+import { SponsorsComponent } from './sponsors/sponsors.component';
+import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.component';
+import { SponsorDetailComponent } from './sponsors/sponsor-detail/sponsor-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import { AppRoutingModule } from './app.routes';
     HttpClientModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
+    
   ],
   providers: [DogService],
 })

@@ -1,0 +1,48 @@
+/* sponsor-list.component.css */
+.sponsor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 0;
+}
+
+
+.sponsor-item {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.sponsor-item img {
+  width: auto;
+  max-width: 100%; 
+  height: 100px;
+  transition: transform 0.3s ease; /* Optional: for a zoom effect on hover */
+}
+
+.sponsor-item:hover img {
+  transform: scale(1.1); /* Optional: zoom effect on hover */
+  cursor: grab;
+}
+
+.sponsor-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+.sponsor-section {
+  /* background-image: url("assets/backgrounds/Cute-dogs.jpg"); */
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  padding: 50px 0;
+}
+
+.sponsor-thank-you {
+  color: black;
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 25px;
+}
