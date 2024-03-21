@@ -1,5 +1,6 @@
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
+import { Sponsor } from '../shared/sponsor.model';
 
 @Component({
   selector: 'app-sponsor-detail',
@@ -9,7 +10,7 @@ import { Component, Inject, ViewEncapsulation } from '@angular/core';
 export class SponsorDetailComponent {
   constructor(
     public dialogRef: MatDialogRef<SponsorDetailComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any // Ensure 'any' is replaced with a type that represents your sponsor data structure
+    @Inject(MAT_DIALOG_DATA) public data: Sponsor
   ) {}
 
   onClose(): void {
