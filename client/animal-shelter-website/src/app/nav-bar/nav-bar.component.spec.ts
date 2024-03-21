@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-<<<<<<<< HEAD:client/animal-shelter-website/src/app/nav-bar/nav-bar.component.spec.ts
 import { NavBarComponent } from './nav-bar.component';
+import { AdoptablePetsComponent } from '../adoptable-pets/adoptable-pets.component';
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;
@@ -9,13 +8,19 @@ describe('NavBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavBarComponent]
+      declarations: [NavBarComponent] // Updated from imports to declarations
     })
     .compileComponents();
     
     fixture = TestBed.createComponent(NavBarComponent);
-========
-import { AdoptablePetsComponent } from './adoptable-pets.component';
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
 
 describe('AdoptablePetsComponent', () => {
   let component: AdoptablePetsComponent;
@@ -23,12 +28,11 @@ describe('AdoptablePetsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdoptablePetsComponent]
+      declarations: [AdoptablePetsComponent] // Updated from imports to declarations
     })
     .compileComponents();
     
     fixture = TestBed.createComponent(AdoptablePetsComponent);
->>>>>>>> d37220d (fixed spelling and created the extra components):client/animal-shelter-website/src/app/adoptable-pets/adoptable-pets.component.spec.ts
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

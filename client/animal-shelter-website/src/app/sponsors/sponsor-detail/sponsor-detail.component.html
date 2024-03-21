@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsor Detail</title>
+</head>
+<body>
+  <div mat-dialog-content style="position: relative; padding: 20px; background-color: #3c728a; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <img [src]="data.logo" alt="{{ data.name }}" style="width: 500px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
+    <div class="content" style="margin-top: 20px;">
+      <h1 style="color: white; margin: 10px 0; font-size: 24px;">{{ data.name }}</h1>
+      <p style="color: white; font-size: 16px;">{{ data.description }}</p>
+    </div>
+    <!-- Replace 'path-to-your-close-button-image.png' with your actual image path -->
+    <button (click)="onClose()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; padding: 0; cursor: pointer;">
+      <img src="assets/icons/Paw-print.svg" alt="Close" style="width: 24px; height: auto;">
+    </button>
+    <!-- Add more sponsor details here -->
+  </div>
+</body>
+</html>

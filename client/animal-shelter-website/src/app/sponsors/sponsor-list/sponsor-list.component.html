@@ -1,0 +1,13 @@
+
+<div class="sponsor-section">
+  <h2 class="sponsor-title bold-franklin">Our Sponsors</h2>
+  <p class = "sponsor-thank-you baskerville">
+    We take pride in creating collaborative, customized partnerships to meet your unique goals and needs.
+  </p>
+</div>
+
+<div class = "sponsor-grid">
+  <div *ngFor = "let sponsor of sponsors" class = "sponsor-item">
+    <img [src] = "sponsor.logo" [alt] = "sponsor.name" (click) = "onSelect(sponsor)">
+  </div>
+</div>
