@@ -174,11 +174,12 @@
         </div>
     </div>
 
+<!-- POP UP BOX -->
     <div class="popup-container" *ngIf="popUpisOpen">
         <div class="popup-box-top">
             <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="popup-image">
             <a>
-                <span style="font-size: x-large; font-weight: bold;" > Hi, I'm Tobi! </span>
+                <span> Hi, I'm Tobi! </span>
                 <br>
                 <br>
                 Gender <br>
@@ -192,7 +193,7 @@
             </a>
 
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton"(click)="closePopUp()">
-
+            <div class="closeX" (click)="closePopUp()"> X </div>
         </div>
 
         <div class="popup-box-bottom">

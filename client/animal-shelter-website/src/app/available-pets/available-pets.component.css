@@ -69,7 +69,7 @@
 
 .image {
     width: 25rem;
-    height: 25rem;
+    height: 30rem;
     cursor: pointer;
 }
 
@@ -85,8 +85,8 @@
 }
 
 .nameTag{
-    width: 10rem;
-    height: 2.25rem;
+    width: 12rem;
+    height: 2.5rem;
     background-color: #51a6ad;
     margin-bottom: 1.25rem;
     margin-top: -1.25rem;
@@ -96,6 +96,9 @@
 .nameTag a{
     font-size: 2rem;
     color: white;
+    align-items: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
 }
 .pawPrint{
     height: 1.25rem;
@@ -131,6 +134,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
+    font-family: "Libre Franklin", sans-serif;
 }
 
 .whitePaw{
@@ -150,20 +154,27 @@
 .popup-box-top{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .popup-box-top a {
     color: white;
     padding: 1rem 4rem;
     font-size: large;
-    font-family: "Libre Franklin", sans-serif;
+    font-family: "Libre Baskerville", serif;
     line-height: 1.5em;
+}
+
+.popup-box-top span{
+    font-size: x-large; 
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
 }
 
 .popup-image{
     padding: 1rem;
     width: 15rem;
-    height: 15rem;
+    height: 20rem;
 }
 .closeButton{
     width: 3rem;
@@ -174,17 +185,31 @@
     cursor: pointer;
 }
 
+.closeX {
+    position: absolute;
+    top: 2rem; /* Adjust as needed */
+    right: 2rem; /* Adjust as needed */
+    color: white; /* Add color to make it visible */
+    font-size: x-large; /* Adjust as needed */
+    cursor: pointer;
+}
+
+
 .popup-box-bottom button{
     background-color:#FAB41B;
     color: white;
-    height: 2rem;
+    width: 7rem;
+    height: 2.25rem;
     align-items: center;
     text-align: center;
-    font-size: larger;
+    font-size: medium;
     margin: .25rem;
     margin-left: 1rem;
     border-color: #51a6ad;
     border-radius: 5px;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
+
 }
 
 .popup-box-bottom p{
