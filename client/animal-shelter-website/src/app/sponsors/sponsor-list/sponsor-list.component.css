@@ -27,6 +27,7 @@
 }
 
 .sponsor-title {
+  color: black;
   padding-left: 10%;
   text-align: left;
   margin: 20px 0;
@@ -61,7 +62,7 @@
 
 .sponsor-thank-you {
   padding-left: 10%;
-  color: #093F52;
+  color: black;
   margin: 0;
   max-width: 800px;
   font-size: 25px;
