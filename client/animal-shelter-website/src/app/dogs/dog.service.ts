@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IDog } from './dog.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class DogService {
 
   constructor(private http: HttpClient) { }
 
-  getDogs(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  getDogs(): Observable<IDog[]> {
+    return this.http.get<IDog[]>(this.baseUrl);
   }
 }

@@ -129,50 +129,22 @@
 
 <!-- DISPLAY ANIMALS -->
 <div class="imageGroup">
-    <div class="individualPet">
-        <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" (click)="openPopUp()">
-                <a> DEENO <span class="whitePaw"> &nbsp;🐾</span> </a>
-            </div>
-            <a class="filterDescription"> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
-            </a>
-
+    <div class="individualPet" *ngFor="let dog of dogs">
+      <div class="description">
+        <!-- Placeholder image for the dog -->
+        <img src="assets/images.jpg" class="image">
+        <div class="nameTag">
+          {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
         </div>
-    </div>
-    <div class="individualPet">        
-        <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64929985/1/?bust=1686414216&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
-                <a> DUKE <span class="whitePaw"> &nbsp; 🐾</span> </a>
-            </div>
-            <a> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
-             </a>
+        <div class="filterDescription">
+          Gender: {{ dog.gender }}<br>
+          Breed: {{ dog.breed }}<br>
+          Age: {{ dog.age }}<br>
         </div>
+      </div>
     </div>
-    <div class="individualPet">    
-        <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
-                <a> TWIX <span class="whitePaw"> &nbsp; 🐾</span></a>
-            </div>
-            <a> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
-             </a>
-
-        </div>
-    </div>
+  </div>
+  
 
 <!-- POP UP BOX -->
     <div class="popup-container" *ngIf="popUpisOpen">
@@ -217,6 +189,5 @@
         
     </div>
 
-</div>
 
 

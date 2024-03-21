@@ -1,14 +1,19 @@
-import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgIf, CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { DogService } from '../dogs/dog.service';
+import { IDog } from '../dogs/dog.interface';
 
 @Component({
   selector: 'app-available-pets',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, CommonModule],
   templateUrl: './available-pets.component.html',
   styleUrl: './available-pets.component.css'
 })
-export class AvailablePetsComponent {
+export class AvailablePetsComponent implements OnInit{
+  dogs: IDog[] = [];
+  fileteredDogs = [];
+  selectedDog = null;
   sexIsOpen: boolean = false;
   ageIsOpen: boolean = false; 
   breedIsOpen: boolean = false; 
@@ -46,4 +51,22 @@ export class AvailablePetsComponent {
     this.popUpisOpen = false;
   }
 
+  constructor(private dogService: DogService) {}
+
+  ngOnInit(): void {
+    this.dogService.getDogs().subscribe({
+      next: (data) => {
+        this.dogs = data;
+        // this.appl  yFilters();
+      },
+      error: (error) => {
+        console.error('Error fetching dogs', error);
+      }
+    });
+  }
+
+  /*selectDog(dog): void {
+    this.selectedDog = dog;
+    this.openPopUp();
+  }*/
 }

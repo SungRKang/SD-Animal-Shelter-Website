@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogService } from './dog.service';
 import { CommonModule } from '@angular/common';
+import { IDog } from './dog.interface';
 
 @Component({
   selector: 'app-dogs',
@@ -16,7 +17,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class DogsComponent implements OnInit {
-  dogs: any[] = [];
+  dogs: IDog[] = [];
 
   constructor(private dogService: DogService) { }
 
