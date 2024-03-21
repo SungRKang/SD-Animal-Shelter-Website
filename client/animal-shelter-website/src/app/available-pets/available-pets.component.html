@@ -1,0 +1,221 @@
+<!-- TITLE OF PAGE -->
+<div>
+    <h1 class="pageHeader"> Available Pets </h1>
+</div>
+
+<!-- FILTERING BUTTONS -->
+<div class="filteringButtonGroup" > 
+    <div>
+        <button (click)="toggleFilter('sexIsOpen')" class="dropdown"> Sex  </button>
+        <div class="filter-content" *ngIf="sexIsOpen">
+            <button class="dropdown">
+                <div >
+                    <a href="female">Female</a>
+                </div>
+                <hr>
+                <div>
+                    <a href="male">Male</a>
+                </div>
+                <hr>
+                <div>
+                    <a href="anysex"> Any Sex</a>
+                </div>
+            </button>
+        </div>
+    </div>
+    
+   <div >
+        <button (click)="toggleFilter('ageIsOpen')" class="dropdown"> Age </button>
+            <div class="filter-content" *ngIf="ageIsOpen" >
+                <button class="dropdown">
+                    <div > 
+                        <a href="under5"> 0-5 </a>
+                    </div>
+                    <hr>
+                    <div > 
+                        <a href="over5"> 5+ </a>
+                    </div>
+                    <hr>
+                    <div > 
+                        <a href="anyage"> Any Age </a>
+                    </div>
+                </button>
+            </div>
+   </div>
+    
+    <div>
+        <button (click)="toggleFilter('breedIsOpen')" class="dropdown"> Breed </button>
+        <div class="filter-content" *ngIf="breedIsOpen">
+            <button class="dropdown">
+                <div>  
+                    <a href="pitbull"> Pitbull</a>
+                </div>
+                <hr>
+                <div>  
+                    <a href="german"> German Shephard</a>
+                </div>
+                <hr>
+                <div>  
+                    <a href="chihuahua"> Chihuahua</a>
+                </div>
+            </button>
+        </div>
+    
+    </div>
+
+
+    <div>
+        <button (click)="toggleFilter('sizeIsOpen')" class="dropdown"> Size </button>
+            <div class="filter-content" *ngIf="sizeIsOpen">
+                <button class="dropdown">
+                    <div>  
+                        <a href="small"> Small</a>
+                    </div>
+                    <hr>
+                    <div> 
+                        <a href="medium"> Medium </a>
+                    </div>
+                    <hr>
+                    <div> 
+                        <a href="larger"> Large</a>
+                    </div>
+                </button>
+            </div>
+    </div>    
+    
+    <div>   
+        <button (click)="toggleFilter('lengthOfStayIsOpen')" class="dropdown"> 
+            Length of Stay 
+        </button>
+        <div class="filter-content" *ngIf="lengthOfStayIsOpen">
+            <button class="dropdown">
+                <div> 
+                    <a href="underSix"> 0-6 Months </a>
+                </div>
+                <hr>
+                <div>  
+                    <a href="underTwelve"> 6-12 Months  </a>
+                </div>
+                <hr>
+                <div> 
+                    <a href="overTelve"> 1+ Years  </a>
+                </div>
+            </button>
+        </div>
+    </div>
+    
+    
+    <div>
+        <button (click)="toggleFilter('sortByIsopen')" class="dropdown"> Sort By </button>
+        <div class="filter-content" *ngIf="sortByIsopen">
+            <button class="dropdown"> 
+                <div> 
+                    <a href="age"> Age (ascending) </a>
+                </div>
+                <hr>
+                <div> 
+                    <a href="size"> Size (ascending) </a>
+                </div>
+                <hr>
+                <div>
+                    <a href="length"> Length of Stay (ascending) </a>
+                </div>
+            </button>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- DISPLAY ANIMALS -->
+<div class="imageGroup">
+    <div class="individualPet">
+        <div class="description">
+            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080" class="image" (click)="openPopUp()">
+            <div class="nameTag" (click)="openPopUp()">
+                <a> DEENO <span class="whitePaw"> &nbsp;🐾</span> </a>
+            </div>
+            <a class="filterDescription"> 
+                Gender  <br>
+                Size    <br>
+                Breed   <br>
+                Age     <br>
+            </a>
+
+        </div>
+    </div>
+    <div class="individualPet">        
+        <div class="description">
+            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64929985/1/?bust=1686414216&width=1080" class="image" (click)="openPopUp()">
+            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
+                <a> DUKE <span class="whitePaw"> &nbsp; 🐾</span> </a>
+            </div>
+            <a> 
+                Gender  <br>
+                Size    <br>
+                Breed   <br>
+                Age     <br>
+             </a>
+        </div>
+    </div>
+    <div class="individualPet">    
+        <div class="description">
+            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="image" (click)="openPopUp()">
+            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
+                <a> TWIX <span class="whitePaw"> &nbsp; 🐾</span></a>
+            </div>
+            <a> 
+                Gender  <br>
+                Size    <br>
+                Breed   <br>
+                Age     <br>
+             </a>
+
+        </div>
+    </div>
+
+    <div class="popup-container" *ngIf="popUpisOpen">
+        <div class="popup-box-top">
+            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="popup-image">
+            <a>
+                <span style="font-size: x-large; font-weight: bold;" > Hi, I'm Tobi! </span>
+                <br>
+                <br>
+                Gender <br>
+                Color <br>
+                Breed <br>
+                Estimated Age <br>
+                Weight <br>
+                DOB <br>
+                <br>
+                Adoption Fee: <br>
+            </a>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton"(click)="closePopUp()">
+
+        </div>
+
+        <div class="popup-box-bottom">
+            <button> Adopt me</button>
+            <button> Support me</button>
+            <p>
+                A little about me: 
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
+            </p>
+        </div>
+        
+        
+        
+        
+
+        
+    </div>
+
+</div>
+
+

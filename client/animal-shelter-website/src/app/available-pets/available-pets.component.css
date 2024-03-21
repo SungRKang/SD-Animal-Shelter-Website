@@ -1,0 +1,196 @@
+.pageHeader{
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.filteringButtonGroup {
+    overflow:hidden;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+
+}
+
+.dropdown{
+    border-radius: .25rem;
+    border: .125rem solid #3E83Af;
+    margin-right: 2rem;
+    padding: .25rem;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 12rem;
+    height: max-content;
+    text-align: left;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 1rem;
+
+}
+
+.dropdown button{
+    max-width: 15rem;
+    max-height: max-content;
+    
+}
+.dropdown :hover{
+    background-color: #FAB41B;
+}
+
+
+.filteringButtonGroup a{
+    color: black;
+    text-align: center;
+    font-family: "Libre Franklin", sans-serif;
+    align-items: center;
+}
+
+.filteringButtonGroup :hover{
+    text-decoration: underline;
+}
+
+.filter-content{
+    overflow: hidden;
+    position: absolute;
+}
+
+.filter-content a{
+    text-align: start;
+}
+
+.imageGroup{
+    overflow: hidden;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image {
+    width: 25rem;
+    height: 25rem;
+    cursor: pointer;
+}
+
+.indvidualPet{
+    display: flex;
+    flex-direction: row;
+}
+.individualPet a{
+    display: flex; 
+    flex-direction: row;
+    margin-left: .25rem;
+    
+}
+
+.nameTag{
+    width: 10rem;
+    height: 2.25rem;
+    background-color: #51a6ad;
+    margin-bottom: 1.25rem;
+    margin-top: -1.25rem;
+    cursor: pointer;
+}
+
+.nameTag a{
+    font-size: 2rem;
+    color: white;
+}
+.pawPrint{
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-top: .5rem;
+    margin-left: .25rem;
+
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    height: 2.25rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+    border: .5px solid grey;
+    width: 25rem;
+    height: max-content;
+}
+
+.description a{
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filterDescription a{
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.whitePaw{
+    filter: invert(100%) brightness(200%);
+}
+
+.popup-container{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #51a6ad;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.popup-box-top{
+    display: flex;
+    flex-direction: row;
+}
+
+.popup-box-top a {
+    color: white;
+    padding: 1rem 4rem;
+    font-size: large;
+    font-family: "Libre Franklin", sans-serif;
+    line-height: 1.5em;
+}
+
+.popup-image{
+    padding: 1rem;
+    width: 15rem;
+    height: 15rem;
+}
+.closeButton{
+    width: 3rem;
+    height: 3rem;
+    filter: invert(100%);
+    padding: 1rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.popup-box-bottom button{
+    background-color:#FAB41B;
+    color: white;
+    height: 2rem;
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+    margin: .25rem;
+    margin-left: 1rem;
+    border-color: #51a6ad;
+    border-radius: 5px;
+}
+
+.popup-box-bottom p{
+    margin-left: 1rem;
+    color: white;
+    margin-right: 1rem;
+    font-family: "Libre Baskerville", serif;
+    
+}

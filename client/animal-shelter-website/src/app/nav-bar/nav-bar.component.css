@@ -13,6 +13,7 @@
   background-color:#093F52;
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
+  justify-content: center;
 
 }
 
@@ -25,6 +26,8 @@
   font-size: 1.25rem;
   cursor: pointer;
   font-size: 1.25rem;
+  justify-content: center;
+
 }
 
 .dropdown {
