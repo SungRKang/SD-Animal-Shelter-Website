@@ -129,10 +129,10 @@
 
 <!-- DISPLAY ANIMALS -->
 <div class="imageGroup">
-    <div class="individualPet" *ngFor="let dog of dogs">
+    <div class="individualPet" *ngFor="let dog of dogs; let i = index">
       <div class="description">
         <!-- Placeholder image for the dog -->
-        <img src="assets/images.jpg" class="image">
+        <img [src]="imageArray[i]" class="image">
         <div class="nameTag">
           {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
         </div>

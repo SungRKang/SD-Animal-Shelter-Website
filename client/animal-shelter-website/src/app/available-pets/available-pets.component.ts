@@ -21,6 +21,30 @@ export class AvailablePetsComponent implements OnInit{
   lengthOfStayIsOpen: boolean = false;
   sortByIsopen: boolean = false;
   popUpisOpen: boolean = false; 
+  imageArray: string[] = [
+    // DEENO
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    // DUKE
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64929985/1/?bust=1686414216&width=1080",
+    // TWIX
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080",
+    // SWIX 
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873406/5/?bust=1684970171&width=1080",
+    // 
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
+    "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080"
+  ];
+  
+    
 
   toggleFilter(filterTitle: string) : void{
     if(filterTitle == "sexIsOpen"){
@@ -69,4 +93,6 @@ export class AvailablePetsComponent implements OnInit{
     this.selectedDog = dog;
     this.openPopUp();
   }*/
+
+
 }

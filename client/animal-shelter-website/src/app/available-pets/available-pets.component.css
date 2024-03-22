@@ -75,7 +75,7 @@
     cursor: pointer;
 }
 
-.indvidualPet{
+.individualPet{
     display: flex;
     flex-direction: row;
 }
