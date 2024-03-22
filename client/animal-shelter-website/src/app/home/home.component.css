@@ -20,6 +20,13 @@
     font-weight: bold;
   }
 
+p {
+    color: white;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.5rem;
+}
+
+
 
   /* Division of section between left and right */
   #container {
