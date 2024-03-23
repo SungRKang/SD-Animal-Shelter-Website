@@ -20,6 +20,13 @@
     font-weight: bold;
   }
 
+  .section-title {
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+
 p {
     color: white;
     font-family: "Libre Baskerville", serif;
@@ -40,7 +47,7 @@ p {
   #container div{
     background-color: #51a6ad;
     align-items: center;
-    margin: 2rem 3rem;
+    margin: 3rem 3rem;
     width: 100%;
     color: white;
   }
@@ -63,7 +70,7 @@ a.learnMoreButton {
     background-color: #FAB41B;
     color: white;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     padding: 0.645rem 1.25rem;
     border-radius: 20px;
@@ -82,7 +89,7 @@ a.learnMoreButton {
     text-align: center; 
     color: black;
     font-size: 2rem;
-    margin-top: 2rem;
+    margin: 3rem;
     margin-bottom: 1rem;
     font-family: "Libre Franklin", sans-serif; 
     font-weight: bold;
