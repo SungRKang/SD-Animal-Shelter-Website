@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
 	line-height: 1.5;
-  font-family: libre baskerville, serif;
+  	font-family: libre baskerville;
 }
 *{
 	margin:0;
@@ -53,7 +53,7 @@ ul{
 
 .footer-col ul li {
 	font-size: 16px;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: #ffffff;
 	text-decoration: none;
 	color: #C1CFD4;
