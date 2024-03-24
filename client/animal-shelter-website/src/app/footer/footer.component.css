@@ -82,7 +82,7 @@ ul{
 }
 
 .footer-col .tableH > ul {
-  width: 33%; /* Each ul takes up half of the .tableH width */
+  width: 35%; /* Each ul takes up half of the .tableH width */
   /* padding: 0; Removes default padding */
   list-style-type: none; /* Removes default list styling */
 }
@@ -145,7 +145,3 @@ ul{
     width: 100%;
 }
 }
-
-
-
-
