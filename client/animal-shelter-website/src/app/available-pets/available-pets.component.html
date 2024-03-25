@@ -9,16 +9,16 @@
         <button (click)="toggleFilter('sexIsOpen')" class="dropdown"> Sex  </button>
         <div class="filter-content" *ngIf="sexIsOpen">
             <button class="dropdown">
-                <div >
-                    <a href="female">Female</a>
+                <div (click)="genderFilter('female')">
+                    <a>Female</a>
                 </div>
                 <hr>
                 <div>
-                    <a href="male">Male</a>
+                    <a>Male</a>
                 </div>
                 <hr>
-                <div>
-                    <a href="anysex"> Any Sex</a>
+                <div (click)="genderFilter('Any Sex')">
+                    <a> Any Sex</a>
                 </div>
             </button>
         </div>
@@ -128,7 +128,7 @@
 </div>
 
 <!-- DISPLAY ANIMALS -->
-<div class="imageGroup">
+<div class="imageGroup" *ngIf="anySex">
     <div class="individualPet" *ngFor="let dog of dogs"> 
         <div class="description">
             <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
@@ -139,12 +139,29 @@
                 {{ dog.gender}}  <br>
                 {{ dog.weight}} lbs    <br>
                 {{ dog.breed}}   <br>
-                {{ dog.age}} yrs    <br>
+                {{ dog.age}} year(s)    <br>
             </a>
         </div>
     </div>
 </div>
     
+<!-- DISPLAY FEMALES  -->
+<div class="imageGroup" *ngIf="female">
+    <div class="individualPet" *ngFor="let dog of dogs"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
     
 
 <!-- POP UP BOX -->
@@ -158,11 +175,12 @@
                 Gender: {{gender}} <br>
                 Color: {{color}} <br>
                 Breed: {{breed}} <br>
-                Estimated Age: {{age}} <br>
-                Weight: {{weight}} <br>
+                Estimated Age: {{age}} year(s) <br>
+                Weight: {{weight}} lbs <br>
                 DOB: {{DOB | date: 'yyyy-MM-dd'}} <br>
                 <br>
                 Adoption Fee: ${{fee}} <br>
+                
             </a>
 
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton"(click)="closePopUp()">
@@ -176,10 +194,7 @@
                 A little about me: 
                 <br>
                 <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                
+                {{description}}
             </p>
         </div>
     

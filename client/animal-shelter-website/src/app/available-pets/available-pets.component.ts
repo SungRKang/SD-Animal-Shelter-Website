@@ -13,7 +13,7 @@ import { IDog } from '../dogs/dog.interface';
 })
 export class AvailablePetsComponent implements OnInit{
   dogs: IDog[] = [];
-  fileteredDogs = [];
+  femaleDogs = [];
   selectedDog = null;
   sexIsOpen: boolean = false;
   ageIsOpen: boolean = false; 
@@ -22,6 +22,8 @@ export class AvailablePetsComponent implements OnInit{
   lengthOfStayIsOpen: boolean = false;
   sortByIsopen: boolean = false;
   popUpisOpen: boolean = false; 
+  female :boolean = false;
+  anySex: boolean = false; 
 
   name: string = "";
   gender: string = "";
@@ -31,14 +33,14 @@ export class AvailablePetsComponent implements OnInit{
   DOB: Date = new Date;
   weight: number = 0;
   fee: number = 0;
+  description: string = "";
   index: number = 0;
-  formattedDOB: any;
-  
+  formattedDOB: any;  
 
   imageArray: string[] = [
-    // Tobi
+    // DEENO
     "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080",
-    // Bella
+    // DANTE
     "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/65740785/2/?bust=1691099325&width=1080",
     // Maggie
     "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080",
@@ -67,7 +69,7 @@ export class AvailablePetsComponent implements OnInit{
     //
     "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/56396516/2/?bust=1685746579&width=1080"
   ];
-dogId: any;
+
   
     
 
@@ -93,6 +95,19 @@ dogId: any;
     
   }
 
+  // FILTERING GENDER FUNCTION
+  genderFilter(gender: string):void{
+    if(gender == "female"){
+      //display female dogs 
+      this.female = !this.female;
+      
+    }
+    else if(gender == "Any Sex"){
+      //display female dogs 
+      this.anySex = !this.anySex;
+    }
+  }
+
   openPopUp(dogObject: IDog):void{
     this.popUpisOpen = !this.popUpisOpen;
     this.name = dogObject.name;
@@ -103,6 +118,7 @@ dogId: any;
     this.weight = dogObject.weight;
     this.DOB = dogObject.DOB;
     this.fee = dogObject.fee;
+    this.description = dogObject.description;
     this.index = dogObject.dogId-1;
   }
 

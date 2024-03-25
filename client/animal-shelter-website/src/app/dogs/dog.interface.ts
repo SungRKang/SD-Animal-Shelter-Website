@@ -8,4 +8,5 @@ export interface IDog {
     weight: number;
     DOB: Date; // or string if you plan to format the date on the client side
     fee: number;
+    description: string;
   }

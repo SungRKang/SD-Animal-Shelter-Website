@@ -38,6 +38,10 @@ const dogSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  description: {
+    type: String,
+    required: true
+  }
 
   // add other fields as needed
 });
