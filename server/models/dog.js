@@ -34,6 +34,10 @@ const dogSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
+  fee: {
+    type: Number,
+    required: true
+  },
 
   // add other fields as needed
 });

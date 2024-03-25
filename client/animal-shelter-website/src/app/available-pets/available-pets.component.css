@@ -61,6 +61,8 @@
 .imageGroup{
     overflow: hidden;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,15 +93,14 @@
     margin-bottom: 1.25rem;
     margin-top: -1.25rem;
     cursor: pointer;
-}
-
-.nameTag a{
     font-size: 2rem;
     color: white;
     align-items: center;
     font-family: "Libre Franklin", sans-serif;
     font-weight: bold;
+    text-align:  center;
 }
+
 .pawPrint{
     height: 1.25rem;
     width: 1.25rem;
@@ -141,15 +142,19 @@
     filter: invert(100%) brightness(200%);
 }
 
-.popup-container{
-    position: absolute;
+.popup-container {
+    position: fixed; /* Use fixed position to keep it centered while scrolling */
+    top: 50%; /* Position it 50% from the top of the viewport */
+    left: 50%; /* Position it 50% from the left of the viewport */
+    transform: translate(-50%, -50%); /* Center the container */
     width: 50%;
     height: 50%;
     background-color: #51a6ad;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* For flexbox alignment */
+    align-items: center; /* For flexbox alignment */
     overflow-y: scroll;
 }
+
 
 .popup-box-top{
     display: flex;

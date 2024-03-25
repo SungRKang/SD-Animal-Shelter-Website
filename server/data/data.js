@@ -7,7 +7,8 @@ export const dogs = [
       "breed": "Beagle-mix",
       "age": 3,
       "weight": 37,
-      "DOB": "2022/09/02"
+      "DOB": "2022/09/02",
+      "fee" : 500
   },
   {
       "dogId": 2,
@@ -17,7 +18,8 @@ export const dogs = [
       "breed": "Great Dane",
       "age": 11,
       "weight": 56,
-      "DOB": "2012/07/05"
+      "DOB": "2012/07/05",
+      "fee" : 500
   },
   {
       "dogId": 3,
@@ -27,7 +29,8 @@ export const dogs = [
       "breed": "Poodle",
       "age": 11,
       "weight": 85,
-      "DOB": "2017/02/15"
+      "DOB": "2017/02/15",
+      "fee" : 500
   },
   {
       "dogId": 4,
@@ -37,7 +40,8 @@ export const dogs = [
       "breed": "Chihuahua",
       "age": 11,
       "weight": 86,
-      "DOB": "2012/02/22"
+      "DOB": "2012/02/22",
+      "fee" : 500
   },
   {
       "dogId": 5,
@@ -47,7 +51,8 @@ export const dogs = [
       "breed": "Boxer",
       "age": 12,
       "weight": 10,
-      "DOB": "2014/02/19"
+      "DOB": "2014/02/19",
+      "fee" : 500
   },
   {
       "dogId": 6,
@@ -57,7 +62,8 @@ export const dogs = [
       "breed": "Beagle",
       "age": 13,
       "weight": 66,
-      "DOB": "2016/09/17"
+      "DOB": "2016/09/17",
+      "fee" : 500
   },
   {
       "dogId": 7,
@@ -67,7 +73,8 @@ export const dogs = [
       "breed": "Great Dane",
       "age": 8,
       "weight": 38,
-      "DOB": "2011/02/03"
+      "DOB": "2011/02/03",
+      "fee" : 500
   },
   {
       "dogId": 8,
@@ -77,7 +84,8 @@ export const dogs = [
       "breed": "Boxer",
       "age": 12,
       "weight": 35,
-      "DOB": "2020/12/05"
+      "DOB": "2020/12/05",
+      "fee" : 500
   },
   {
       "dogId": 9,
@@ -87,7 +95,8 @@ export const dogs = [
       "breed": "Poodle",
       "age": 3,
       "weight": 56,
-      "DOB": "2009/02/25"
+      "DOB": "2009/02/25",
+      "fee" : 500
   },
   {
       "dogId": 10,
@@ -97,7 +106,8 @@ export const dogs = [
       "breed": "Beagle",
       "age": 1,
       "weight": 89,
-      "DOB": "2018/02/14"
+      "DOB": "2018/02/14",
+      "fee" : 500
   },
   {
       "dogId": 11,
@@ -107,7 +117,8 @@ export const dogs = [
       "breed": "Bulldog",
       "age": 12,
       "weight": 32,
-      "DOB": "2017/11/08"
+      "DOB": "2017/11/08",
+      "fee" : 500
   },
   {
       "dogId": 12,
@@ -117,7 +128,8 @@ export const dogs = [
       "breed": "Siberian Husky",
       "age": 9,
       "weight": 80,
-      "DOB": "2018/02/18"
+      "DOB": "2018/02/18",
+      "fee" : 500
   },
   {
       "dogId": 13,
@@ -127,7 +139,8 @@ export const dogs = [
       "breed": "Bulldog",
       "age": 7,
       "weight": 14,
-      "DOB": "2010/02/04"
+      "DOB": "2010/02/04",
+      "fee" : 500
   },
   {
       "dogId": 14,
@@ -137,7 +150,8 @@ export const dogs = [
       "breed": "Golden Retriever",
       "age": 14,
       "weight": 88,
-      "DOB": "2015/03/05"
+      "DOB": "2015/03/05",
+      "fee" : 500
   },
   {
       "dogId": 15,
@@ -147,7 +161,8 @@ export const dogs = [
       "breed": "Siberian Husky",
       "age": 9,
       "weight": 57,
-      "DOB": "2012/07/08"
+      "DOB": "2012/07/08",
+      "fee" : 500
   }
 ];
 

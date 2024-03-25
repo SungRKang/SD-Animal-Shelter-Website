@@ -129,67 +129,40 @@
 
 <!-- DISPLAY ANIMALS -->
 <div class="imageGroup">
-    <div class="individualPet">
+    <div class="individualPet" *ngFor="let dog of dogs"> 
         <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/69276527/2/?bust=1697152512&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" (click)="openPopUp()">
-                <a> DEENO <span class="whitePaw"> &nbsp;🐾</span> </a>
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
             </div>
             <a class="filterDescription"> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} yrs    <br>
             </a>
-
         </div>
     </div>
-    <div class="individualPet">        
-        <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64929985/1/?bust=1686414216&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
-                <a> DUKE <span class="whitePaw"> &nbsp; 🐾</span> </a>
-            </div>
-            <a> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
-             </a>
-        </div>
-    </div>
-    <div class="individualPet">    
-        <div class="description">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="image" (click)="openPopUp()">
-            <div class="nameTag" style="text-align: center;" (click)="openPopUp()">
-                <a> TWIX <span class="whitePaw"> &nbsp; 🐾</span></a>
-            </div>
-            <a> 
-                Gender  <br>
-                Size    <br>
-                Breed   <br>
-                Age     <br>
-             </a>
-
-        </div>
-    </div>
+</div>
+    
+    
 
 <!-- POP UP BOX -->
     <div class="popup-container" *ngIf="popUpisOpen">
         <div class="popup-box-top">
-            <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/59873415/4/?bust=1684520867&width=1080" class="popup-image">
+            <img [src]="imageArray[index]" class="popup-image">
             <a>
-                <span> Hi, I'm Tobi! </span>
+                <span> Hi, I'm  {{name}} </span>
                 <br>
                 <br>
-                Gender <br>
-                Color <br>
-                Breed <br>
-                Estimated Age <br>
-                Weight <br>
-                DOB <br>
+                Gender: {{gender}} <br>
+                Color: {{color}} <br>
+                Breed: {{breed}} <br>
+                Estimated Age: {{age}} <br>
+                Weight: {{weight}} <br>
+                DOB: {{DOB | date: 'yyyy-MM-dd'}} <br>
                 <br>
-                Adoption Fee: <br>
+                Adoption Fee: ${{fee}} <br>
             </a>
 
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton"(click)="closePopUp()">
@@ -209,14 +182,9 @@
                 
             </p>
         </div>
-        
-        
-        
-        
-
-        
+    
     </div>
 
-</div>
+
 
 
