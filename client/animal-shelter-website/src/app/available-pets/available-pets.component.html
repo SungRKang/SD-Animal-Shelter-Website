@@ -13,7 +13,7 @@
                     <a>Female</a>
                 </div>
                 <hr>
-                <div>
+                <div (click)="genderFilter('male')">
                     <a>Male</a>
                 </div>
                 <hr>
@@ -28,16 +28,16 @@
         <button (click)="toggleFilter('ageIsOpen')" class="dropdown"> Age </button>
             <div class="filter-content" *ngIf="ageIsOpen" >
                 <button class="dropdown">
-                    <div > 
-                        <a href="under5"> 0-5 </a>
+                    <div (click)="ageFilter('zero')"> 
+                        <a> 0-5 </a>
+                    </div>
+                    <hr>
+                    <div (click)="ageFilter('five')"> 
+                        <a> 5+ </a>
                     </div>
                     <hr>
                     <div > 
-                        <a href="over5"> 5+ </a>
-                    </div>
-                    <hr>
-                    <div > 
-                        <a href="anyage"> Any Age </a>
+                        <a> Any Age </a>
                     </div>
                 </button>
             </div>
@@ -127,7 +127,7 @@
     
 </div>
 
-<!-- DISPLAY ANIMALS -->
+<!-- DISPLAY ANY SEX -->
 <div class="imageGroup" *ngIf="anySex">
     <div class="individualPet" *ngFor="let dog of dogs"> 
         <div class="description">
@@ -147,7 +147,61 @@
     
 <!-- DISPLAY FEMALES  -->
 <div class="imageGroup" *ngIf="female">
-    <div class="individualPet" *ngFor="let dog of dogs"> 
+    <div class="individualPet" *ngFor="let dog of genderArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY MALES  -->
+<div class="imageGroup" *ngIf="male">
+    <div class="individualPet" *ngFor="let dog of genderArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY AGES 0-5  -->
+<div class="imageGroup" *ngIf="zero">
+    <div class="individualPet" *ngFor="let dog of ageArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY AGES 5+  -->
+<div class="imageGroup" *ngIf="five">
+    <div class="individualPet" *ngFor="let dog of ageArr"> 
         <div class="description">
             <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
             <div class="nameTag">

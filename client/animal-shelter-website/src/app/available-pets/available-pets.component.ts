@@ -13,7 +13,8 @@ import { IDog } from '../dogs/dog.interface';
 })
 export class AvailablePetsComponent implements OnInit{
   dogs: IDog[] = [];
-  femaleDogs = [];
+  genderArr: IDog[] = [];
+  ageArr: IDog[] = [];
   selectedDog = null;
   sexIsOpen: boolean = false;
   ageIsOpen: boolean = false; 
@@ -23,7 +24,10 @@ export class AvailablePetsComponent implements OnInit{
   sortByIsopen: boolean = false;
   popUpisOpen: boolean = false; 
   female :boolean = false;
+  male :boolean = false;
   anySex: boolean = false; 
+  zero: boolean = false;
+  five: boolean = false;
 
   name: string = "";
   gender: string = "";
@@ -98,16 +102,61 @@ export class AvailablePetsComponent implements OnInit{
   // FILTERING GENDER FUNCTION
   genderFilter(gender: string):void{
     if(gender == "female"){
-      //display female dogs 
+      this.genderArr = [];
       this.female = !this.female;
-      
+      this.male = false;
+      this.anySex = false;
+      for(const obj in this.dogs){
+        if(this.dogs[obj].gender == "Female"){
+          this.genderArr.push(this.dogs[obj]);
+        }
+      }
+    }
+    else if(gender == "male"){
+      this.genderArr = [];
+      this.male = !this.male;
+      this.female = false;
+      this.anySex = false;
+      for(const obj in this.dogs){
+        if(this.dogs[obj].gender == "Male"){
+          this.genderArr.push(this.dogs[obj]);
+        }
+      }
+
     }
     else if(gender == "Any Sex"){
-      //display female dogs 
+      this.genderArr = [];
       this.anySex = !this.anySex;
+      this.male = false;
+      this.female = false;
     }
   }
 
+  ageFilter(age: string){
+    this.ageArr = [];
+    if(age = "zero"){
+      this.zero = !this.zero;
+      this.five = false;
+      for(const obj in this.dogs){
+        if(this.dogs[obj].age < 5){
+          this.ageArr.push(this.dogs[obj]);
+        }
+        console.log(this.dogs[obj].age);
+      }
+      console.log("age 0", this.ageArr);
+    }
+    if(age = "five"){
+      this.five = !this.five;
+      this.zero = false;
+      for(const obj in this.dogs){
+        if(this.dogs[obj].age >= 5){
+          this.ageArr.push(this.dogs[obj]);
+        }
+      }
+      console.log("age 5", this.ageArr);
+    }
+
+  }
   openPopUp(dogObject: IDog):void{
     this.popUpisOpen = !this.popUpisOpen;
     this.name = dogObject.name;
