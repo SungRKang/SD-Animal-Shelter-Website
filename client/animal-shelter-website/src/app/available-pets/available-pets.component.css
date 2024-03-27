@@ -13,19 +13,23 @@
 }
 
 .dropdown{
+    display: flex;
+    flex-direction: column;
     border-radius: .25rem;
     border: .125rem solid #3E83Af;
     margin-right: 2rem;
+    margin-bottom: .5rem;
     padding: .25rem;
     background-color: white;
     cursor: pointer;
-    margin-top: 1rem;
     width: 12rem;
     height: max-content;
     text-align: left;
     font-family: "Libre Franklin", sans-serif;
     font-size: 1rem;
-
+}
+.dropdown-content{
+    margin-top: .5rem;
 }
 
 .dropdown button{
@@ -59,7 +63,6 @@
 }
 
 .imageGroup{
-    overflow: hidden;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;

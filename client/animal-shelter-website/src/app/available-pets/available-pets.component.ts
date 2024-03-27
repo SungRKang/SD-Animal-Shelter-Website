@@ -2,6 +2,7 @@ import { NgIf, CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DogService } from '../dogs/dog.service';
 import { IDog } from '../dogs/dog.interface';
+import { Console } from 'node:console';
 
 
 @Component({
@@ -15,6 +16,11 @@ export class AvailablePetsComponent implements OnInit{
   dogs: IDog[] = [];
   genderArr: IDog[] = [];
   ageArr: IDog[] = [];
+  displayArr: IDog[] = [];
+  breedArr: IDog[] = [];
+  genders : string[] = [];
+  breeds: string[] = [];
+  sizes: string[] = [];
   selectedDog = null;
   sexIsOpen: boolean = false;
   ageIsOpen: boolean = false; 
@@ -23,11 +29,11 @@ export class AvailablePetsComponent implements OnInit{
   lengthOfStayIsOpen: boolean = false;
   sortByIsopen: boolean = false;
   popUpisOpen: boolean = false; 
-  female :boolean = false;
-  male :boolean = false;
   anySex: boolean = false; 
   zero: boolean = false;
   five: boolean = false;
+  showBreeds: boolean = false;
+  showGender: boolean = false;
 
   name: string = "";
   gender: string = "";
@@ -40,6 +46,9 @@ export class AvailablePetsComponent implements OnInit{
   description: string = "";
   index: number = 0;
   formattedDOB: any;  
+  sexButtonName = "Any Sex";
+  ageButtonName = "Any Age";
+  breedButtonName = "Any Breed";
 
   imageArray: string[] = [
     // DEENO
@@ -75,7 +84,26 @@ export class AvailablePetsComponent implements OnInit{
   ];
 
   
+
+  getGenders() : string[]{
+    for (const dog in this.dogs){
+      if(!this.genders.includes(this.dogs[dog].gender)){
+        this.genders.push(this.dogs[dog].gender);
+      }
+    }
+    return this.genders;
+  }
+
+  getBreeds() : string[]{
+    for (const dog in this.dogs){
+      if(!this.breeds.includes(this.dogs[dog].breed)){
+        this.breeds.push(this.dogs[dog].breed);
+      }
+    }
+    return this.breeds;
+  }
     
+  
 
   toggleFilter(filterTitle: string) : void{
     if(filterTitle == "sexIsOpen"){
@@ -99,44 +127,48 @@ export class AvailablePetsComponent implements OnInit{
     
   }
 
-  // FILTERING GENDER FUNCTION
-  genderFilter(gender: string):void{
-    if(gender == "female"){
-      this.genderArr = [];
-      this.female = !this.female;
-      this.male = false;
-      this.anySex = false;
-      for(const obj in this.dogs){
-        if(this.dogs[obj].gender == "Female"){
-          this.genderArr.push(this.dogs[obj]);
-        }
-      }
-    }
-    else if(gender == "male"){
-      this.genderArr = [];
-      this.male = !this.male;
-      this.female = false;
-      this.anySex = false;
-      for(const obj in this.dogs){
-        if(this.dogs[obj].gender == "Male"){
-          this.genderArr.push(this.dogs[obj]);
-        }
-      }
+  displayAll(){
+    this.anySex = true;
+    this.showGender = false;
+    this.showBreeds = false;
+    this.sexButtonName = "Any Sex";
+    this.ageButtonName = "Any Age";
+    this.breedButtonName = "Any Breed";
+    this.ageIsOpen = false;
+    this.sizeIsOpen = false;
+    this.breedIsOpen = false;
+    this.sizeIsOpen = false;
+    this.sexIsOpen = false;
+    this.genderArr = [];
+    this.ageArr = [];
 
+  }
+
+  genderFilter(gender:string){
+    this.genderArr = [];
+    this.showGender = true; //toggle html to display gendersArr
+    this.anySex = false;                // dont show all the animals only the clicked gender
+    this.sexIsOpen = false;             // after user click on their desired gender close the drop down
+    this.sexButtonName = gender;        // if user click female/male display that in the button name
+
+    for(const obj in this.dogs){
+      if(this.dogs[obj].gender == gender){
+        this.genderArr.push(this.dogs[obj]);
+      }
     }
-    else if(gender == "Any Sex"){
-      this.genderArr = [];
-      this.anySex = !this.anySex;
-      this.male = false;
-      this.female = false;
-    }
+    console.log("gender clicked", gender);
+    console.log("genderArr", this.genderArr);
   }
 
   ageFilter(age: string){
-    this.ageArr = [];
-    if(age = "zero"){
-      this.zero = !this.zero;
+    this.anySex = false;      // dont displayy all pets
+    this.ageButtonName = age; // set the age button name to the selected age range
+    this.ageIsOpen = false;   // close the age button after the user clicks it
+    if(age == "0-5"){         // if user clicks the age rane 0-5
+      this.ageArr = [];       // clear array of previous clicks
+      this.zero = true; 
       this.five = false;
+      
       for(const obj in this.dogs){
         if(this.dogs[obj].age < 5){
           this.ageArr.push(this.dogs[obj]);
@@ -144,8 +176,22 @@ export class AvailablePetsComponent implements OnInit{
         console.log(this.dogs[obj].age);
       }
       console.log("age 0", this.ageArr);
+
+      //check if other filters are clicked 
+      if(this.genderArr.length != 0){
+        this.ageArr = [];
+        for(const obj in this.genderArr){
+          if(this.genderArr[obj].age < 5){
+            console.log("female 0-5", this.genderArr[obj]);
+            this.ageArr.push(this.genderArr[obj]);
+          }
+        }
+        this.genderArr = [];
+      }
+      console.log("zero was clicked");
     }
-    if(age = "five"){
+    else if(age == "5+"){
+      this.ageArr = [];
       this.five = !this.five;
       this.zero = false;
       for(const obj in this.dogs){
@@ -153,9 +199,39 @@ export class AvailablePetsComponent implements OnInit{
           this.ageArr.push(this.dogs[obj]);
         }
       }
-      console.log("age 5", this.ageArr);
-    }
+      //console.log("age 5", this.ageArr);
 
+      //check if other filters are clicked 
+      // if gender is not empty
+      if(this.genderArr.length != 0){
+        this.ageArr = [];
+        for(const obj in this.genderArr){
+          if(this.genderArr[obj].age > 5){
+            console.log("female 5+", this.genderArr[obj]);
+            if(!this.genderArr.includes(this.genderArr[obj])){
+              this.ageArr.push(this.genderArr[obj]);
+            }
+          }
+        }
+      }
+      //console.log("ageArr",this.ageArr);
+      console.log("female was clicked");
+    }
+  }
+
+  breedFilter(breed: string){
+    this.breedArr = [];
+    this.showBreeds = !this.showBreeds;
+    this.breedIsOpen = false;
+    this.breedButtonName = breed;
+    for(const obj in this.dogs){
+      if(this.dogs[obj].breed == breed){
+        this.breedArr.push(this.dogs[obj]);
+      }
+
+    }
+    console.log("breed clicked", breed);
+    console.log("breedArr", this.breedArr);
   }
   openPopUp(dogObject: IDog):void{
     this.popUpisOpen = !this.popUpisOpen;
