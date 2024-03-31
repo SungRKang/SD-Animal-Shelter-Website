@@ -1,10 +1,24 @@
 /* surrendering-pet.component.css */
 .container {
-  max-width: 800px; /* Increased width */
+  max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a flexible grid */
-  gap: 20px; /* Adds space between grid items */
+  grid-template-columns: 1fr; /* Single column for the container */
+  gap: 20px;
+}
+
+.title {
+  grid-column: 1 / -1; /* Title spans full width */
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for the form */
+  gap: 20px;
+}
+
+.form-group {
+  /* Remove 'display: contents' if it's causing issues */
 }
 
 label {
@@ -15,20 +29,16 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="number"],
 textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
 }
 
+/* Adjustments for responsiveness */
 @media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr; /* Stacks the form fields in a single column on smaller screens */
+  .form-container {
+    grid-template-columns: 1fr; /* Single column on small screens */
   }
-}
-
-button {
-  grid-column: 1 / -1; /* Makes the submit button span all columns */
-  margin-top: 20px;
-  padding: 10px 20px;
 }
