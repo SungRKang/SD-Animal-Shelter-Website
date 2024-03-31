@@ -1,92 +1,91 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
+
+function loadScript() {
+  return new Promise<void>((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://apis.google.com/js/api.js';
+    script.onload = () => {
+      console.log('Google API script loaded successfully.');
+      resolve();
+    };
+    script.onerror = (error) => {
+      console.error('Error loading Google API script:', error);
+      reject(error);
+    };
+    document.head.appendChild(script); // Append the script to head for better practice
+  });
+}
+
+
 
 declare const gapi: any;
-declare const google: any;
 
 @Injectable({
   providedIn: 'root'
 })
-export class GoogleCalendarService  {
-   // Flag to track if the Google client library is loaded
-   private isGoogleClientLoaded = false;
-   // Array to store the list of calendars
-   public calendarList: string[] = [];
-   // Array to store the list of events
-   public events: any[] = [];
- 
-   constructor() {}
- 
-   // Method to load the Google client library
-   public loadGoogleClient(): Promise<void> {
-     return new Promise((resolve, reject) => {
-       // Check if the Google client library is already loaded
-       if (this.isGoogleClientLoaded) {
-         // If already loaded, resolve the promise
-         resolve();
-       } else {
-         try {
-           // Initialize the Google OAuth2 client
-           google.accounts.oauth2.initCodeClient({
-             // Set the client ID obtained from the Google Cloud Console
-             client_id: '919666354582-vpt2pbudisut74gha38svjmcbfpebkkb.apps.googleusercontent.com',
-             // Set the scope to access the Google Calendar API (read-only)
-             scope: 'https://www.googleapis.com/auth/calendar.readonly',
-             // Set the UX mode to 'popup' for authentication
-             ux_mode: 'popup',
-             // Callback function to handle the authentication response
-             callback: (response:any) => {
-               // Log the authentication response
-               console.log('Authentication response:', response);
-               // Set the flag to indicate that the Google client library is loaded
-               this.isGoogleClientLoaded = true;
-               // Resolve the promise
-               resolve();
-             },
-           });
-         } catch (error) {
-           // If an error occurs, reject the promise with the error
-           reject(error);
-         }
-       }
-     });
-   }
- 
-   // Method to list the calendars
-   public listCalendars(): Promise<string[]> {
-     // Call the Google Calendar API to list the calendars
-     return google.api.client.calendar.calendarList.list().then((response:any) => {
-       // Extract the calendar items from the response
-       const calendars = response.result.items;
-       // Map the calendar items to an array of calendar IDs
-       this.calendarList = calendars.map((calendar:any) => calendar.id);
-       // Return the array of calendar IDs
-       return this.calendarList;
-     });
-   }
- 
-   // Method to list the events for a specific calendar
-   public listEvents(calendarId: string): Promise<any[]> {
-     // Call the Google Calendar API to list the events for the specified calendar
-     return google.api.client.calendar.events.list({
-       // Set the calendar ID for which to retrieve the events
-       calendarId: calendarId,
-       // Set the minimum start time for the events (current date and time)
-       timeMin: new Date().toISOString(),
-       // Exclude deleted events
-       showDeleted: false,
-       // Expand recurring events into individual instances
-       singleEvents: true,
-       // Set the maximum number of events to retrieve (10 in this case)
-       maxResults: 10,
-       // Order the events by start time
-       orderBy: 'startTime'
-     }).then((response:any) => {
-       // Extract the event items from the response
-       this.events = response.result.items;
-       // Return the array of events
-       return this.events;
-     });
-   }
- }
+export class GoogleCalendarService {
+  private isGoogleClientLoaded = false;
+
+  constructor() {}
+
+  public async loadGoogleClient(): Promise<void> {
+    if (this.isGoogleClientLoaded) {
+      return; // Implicitly returns Promise<void> in an async function
+    }
+    // No else needed after a return statement
+    try {
+      await loadScript(); // Ensures the script is loaded before proceeding
+      await gapi.load('client:auth2');
+      await gapi.client.init({
+        apiKey: "AIzaSyBcLvnp7fUuZHcBnP4zArJhH6yr6l_q3Ps",
+        clientId: "919666354582-vpt2pbudisut74gha38svjmcbfpebkkb.apps.googleusercontent.com",
+        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+        scope: 'https://www.googleapis.com/auth/calendar.readonly'
+      });
+      await gapi.auth2.getAuthInstance().signIn();
+      this.isGoogleClientLoaded = true;
+    } catch (error) {
+      console.error('Error loading Google API client:', error);
+      // Since this is an async function, throwing an error will reject the promise
+      throw error;
+    }
+  }
+  
+
+  public listCalendars(): Observable<string[]> {
+    const promise = gapi.client.calendar.calendarList.list().then((response: any) => {
+      return response.result.items.map((calendar: any) => calendar.id as string);
+    }).catch((error: any) => {
+      console.error('Error listing calendars:', error);
+      throw error;
+    });
+  
+    // Use the 'from' function to convert the typed promise into an Observable<string[]>.
+    return from(promise) as Observable<string[]>;
+  }
+  
+  
+
+  public listEvents(calendarId: string): Observable<Event[]> { // Assume Event is a type/interface you've defined
+    const promise = gapi.client.calendar.events.list({
+      calendarId: calendarId,
+      timeMin: new Date().toISOString(),
+      showDeleted: false,
+      singleEvents: true,
+      maxResults: 10,
+      orderBy: 'startTime'
+    }).then((response: any) => {
+      console.log(response.result.items);
+      return response.result.items as Event[];
+      
+    }).catch((error: any) => {
+      console.error('Error listing events:', error);
+      throw error;
+    });
+  
+    // Convert the typed promise into an Observable<Event[]>.
+    return from(promise) as Observable<Event[]>;
+  }
+}
 
