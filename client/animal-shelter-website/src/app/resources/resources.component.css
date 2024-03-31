@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+}
+
+
+.image-1 {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  margin-top: 6rem;
+  margin-right: 6rem;
+}
+
+.image-1 img {
+  width: 100%; /* Make the image take up the full width of its container */
+  height: auto; /* Adjust the height automatically based on the width, maintaining aspect ratio */
+}
+
+
+.box-2 {
+  background-color: white;
+  margin-top: 3rem;
+  float:right;
+  padding: 0 6rem;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+}
+
+
