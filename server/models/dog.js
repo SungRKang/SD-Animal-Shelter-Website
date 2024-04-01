@@ -30,12 +30,20 @@ const dogSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  size: {
+    type: String,
+    required: true
+  },
   DOB: {
     type: Date,
     required: true
   },
   fee: {
     type: Number,
+    required: true
+  },
+  shelterDate: {
+    type: Date,
     required: true
   },
   description: {

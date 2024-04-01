@@ -6,7 +6,9 @@ export interface IDog {
     breed: string;
     age: number;
     weight: number;
+    size: string;
     DOB: Date; // or string if you plan to format the date on the client side
     fee: number;
+    shelterDate: Date;
     description: string;
   }

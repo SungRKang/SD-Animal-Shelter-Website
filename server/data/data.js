@@ -7,8 +7,10 @@ export const dogs = [
       "breed": "Pit Terrior Mix",
       "age": 3,
       "weight": 52,
+      "size": "Large",
       "DOB": "2021/08/04",
       "fee" : 100,
+      "shelterDate" : "2023/07/05",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -19,8 +21,10 @@ export const dogs = [
       "breed": "Great Dane",
       "age": 11,
       "weight": 56,
+      "size": "Large",
       "DOB": "2012/07/05",
       "fee" : 500,
+      "shelterDate" : "2023/11/12",
       "description" : "My name is Dante and I came all the way from Kansas City to find a home in this amazing state. Coming into the rescue they have been teaching me commands like sit and off. Sometimes I don't understand the off part, but once I calm down I will lay there at your feet soaking in any love you can give me. My favourite things to do are play with other dogs, go on walks, and play with toys. If you're looking for a companion who is a quick learner and desire to please look no further than me!"
   },
   {
@@ -31,8 +35,10 @@ export const dogs = [
       "breed": "Poodle",
       "age": 11,
       "weight": 85,
+      "size": "Large",
       "DOB": "2017/02/15",
       "fee" : 500,
+      "shelterDate" : "2022/05/20",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -43,20 +49,24 @@ export const dogs = [
       "breed": "Chihuahua",
       "age": 0,
       "weight": 86,
+      "size": "Large",
       "DOB": "2012/02/22",
       "fee" : 500,
+      "shelterDate" : "2023/06/18",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
       "dogId": 5,
       "name": "Daisy",
-      "gender": "Female",
+      "gender": "Male",
       "color": "Black",
       "breed": "Boxer",
       "age": 12,
       "weight": 10,
+      "size": "Small",
       "DOB": "2014/02/19",
       "fee" : 500, 
+      "shelterDate" : "2022/04/02",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -67,8 +77,10 @@ export const dogs = [
       "breed": "Beagle",
       "age": 13,
       "weight": 66,
+      "size": "Large",
       "DOB": "2016/09/17",
       "fee" : 500,
+      "shelterDate" : "2022/11/20",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -79,8 +91,10 @@ export const dogs = [
       "breed": "Great Dane",
       "age": 8,
       "weight": 38,
+      "size": "Medium",
       "DOB": "2011/02/03",
       "fee" : 500,
+      "shelterDate" : "2023/08/05",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -91,8 +105,10 @@ export const dogs = [
       "breed": "Boxer",
       "age": 0,
       "weight": 35,
+      "size": "Medium",
       "DOB": "2020/12/05",
       "fee" : 500, 
+      "shelterDate" : "2023/01/25 ",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -103,8 +119,10 @@ export const dogs = [
       "breed": "Poodle",
       "age": 3,
       "weight": 56,
+      "size": "Large",
       "DOB": "2009/02/25",
       "fee" : 500,
+      "shelterDate" : "2023/01/25",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -115,8 +133,10 @@ export const dogs = [
       "breed": "Beagle",
       "age": 1,
       "weight": 89,
+      "size": "Large",
       "DOB": "2018/02/14",
       "fee" : 500,
+      "shelterDate" : "2023/04/29",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -127,8 +147,10 @@ export const dogs = [
       "breed": "Bulldog",
       "age": 12,
       "weight": 32,
+      "size": "Medium",
       "DOB": "2017/11/08",
       "fee" : 500,
+      "shelterDate" : "2024/09/12",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -139,8 +161,10 @@ export const dogs = [
       "breed": "Siberian Husky",
       "age": 9,
       "weight": 80,
+      "size": "Large",
       "DOB": "2018/02/18",
       "fee" : 500, 
+      "shelterDate" : "2023/03/10",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -151,8 +175,10 @@ export const dogs = [
       "breed": "Bulldog",
       "age": 7,
       "weight": 14,
+      "size": "Small",
       "DOB": "2010/02/04",
       "fee" : 500,
+      "shelterDate" : "2023/09/10",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -163,8 +189,10 @@ export const dogs = [
       "breed": "Golden Retriever",
       "age": 0,
       "weight": 88,
+      "size": "Large",
       "DOB": "2015/03/05",
       "fee" : 500,
+      "shelterDate" : "2024/01/20",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   },
   {
@@ -175,8 +203,10 @@ export const dogs = [
       "breed": "Siberian Husky",
       "age": 9,
       "weight": 57,
+      "size": "Large",
       "DOB": "2012/07/08",
       "fee" : 500,
+      "shelterDate" : "2023/05/18",
       "description" : "RAWR there! I’m Deeno or you can call me Deenosaurus Rex. My previous owner has said that I am good with other dogs, cats, children, strangers, and playing. So far the rescue is still trying to figure out where I’m at with all those things but they can tell that I love people and children. Dogs can be a bit difficult for me to work with. It just depends if our vibes be vibing. One of the main things I do love to do is go on walks and man will I run and play. I’d probably do well with an active family who can give me lots of extra activities. If you’re needing an explorer look no further because I’m right here waiting for my next adventure."
   }
 ];

@@ -12,7 +12,7 @@
                 <div *ngFor="let gender of genders" (click)="genderFilter(gender)" class="dropdown-content">
                     <a> {{gender}} </a>
                 </div>
-                <a class="dropdown-content" (click)="displayAll()"> Any Sex </a>
+                <a class="dropdown-content" (click)="genderFilter('Any Sex')"> Any Sex </a>
             </button>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     
                     <a class="dropdown-content" (click)="ageFilter('0-5')"> 0-5 </a>
                     <a class="dropdown-content" (click)="ageFilter('5+')"> 5+ </a>
-                    <a class="dropdown-content" (click)="displayAll()"> Any Age </a>
+                    <a class="dropdown-content" (click)="ageFilter('Any Age')"> Any Age </a>
                     
                 </button>
             </div>
@@ -37,7 +37,7 @@
                 <div *ngFor="let breed of breeds" class="dropdown-content" (click)="breedFilter(breed)">  
                     <a> {{breed}} </a>
                 </div>
-                <a class="dropdown-content" (click)="displayAll()"> Any Breed </a>
+                <a class="dropdown-content" (click)="breedFilter('Any Breed')"> Any Breed </a>
 
             </button>
         </div>
@@ -45,42 +45,29 @@
     </div>
 
 
-    <div>
-        <button (click)="toggleFilter('sizeIsOpen')" class="dropdown"> Size </button>
+    <div (click)="getSize()">
+        <button (click)="toggleFilter('sizeIsOpen')" class="dropdown"> {{sizeButtonName}} </button>
             <div class="filter-content" *ngIf="sizeIsOpen">
                 <button class="dropdown">
-                    <div>  
-                        <a href="small"> Small</a>
-                    </div>
-                    <hr>
-                    <div> 
-                        <a href="medium"> Medium </a>
-                    </div>
-                    <hr>
-                    <div> 
-                        <a href="larger"> Large</a>
-                    </div>
+                    <div *ngFor="let size of sizes" class="dropdown-content" (click)="sizeFilter(size)">  
+                        <a> {{size}} </a>
+                    </div>    
+                    <a class="dropdown-content" (click)="sizeFilter('Any Size')"> Any Size </a>
                 </button>
             </div>
     </div>    
     
     <div>   
         <button (click)="toggleFilter('lengthOfStayIsOpen')" class="dropdown"> 
-            Length of Stay 
+            {{lengthButtonName}}
         </button>
         <div class="filter-content" *ngIf="lengthOfStayIsOpen">
             <button class="dropdown">
-                <div> 
-                    <a href="underSix"> 0-6 Months </a>
-                </div>
-                <hr>
-                <div>  
-                    <a href="underTwelve"> 6-12 Months  </a>
-                </div>
-                <hr>
-                <div> 
-                    <a href="overTelve"> 1+ Years  </a>
-                </div>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('0-6')"> 0-6 Months </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('6-12')"> 6-12 Months </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('1+')"> 1+ Years </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('Any Length of Stay')">Any Length of Stay </a>
+
             </button>
         </div>
     </div>
@@ -125,6 +112,8 @@
         </div>
     </div>
 </div>
+
+
     
 <!-- DISPLAY GENDERS  -->
 <div class="imageGroup" *ngIf="showGender">
@@ -182,7 +171,9 @@
     </div>
 </div>
 
-<!-- DISPLAY Breeds  -->
+
+
+<!-- DISPLAY BREEDS  -->
 <div class="imageGroup" *ngIf="showBreeds">
     <div class="individualPet" *ngFor="let dog of breedArr"> 
         <div class="description">
@@ -199,6 +190,60 @@
         </div>
     </div>
 </div>
+
+<!-- DISPLAY SIZES  -->
+<div class="imageGroup" *ngIf="showSizes">
+    <div class="individualPet" *ngFor="let dog of sizeArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY LENGTH OF STAY  -->
+<div class="imageGroup" *ngIf="showLengthOfStay">
+    <div class="individualPet" *ngFor="let dog of lengthArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY SORT BY -->
+<!-- <div class="imageGroup" *ngIf="anySex">
+    <div class="individualPet" *ngFor="let dog of dogs"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div> -->
     
 
 <!-- POP UP BOX -->
