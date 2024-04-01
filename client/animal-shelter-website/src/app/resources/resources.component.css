@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+}
+
+
+.image-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-1 img {
+  width: 100%; 
+  height: auto; 
+}
+
+.box-2 {
+  background-color: white;
+  margin-top: 0;
+  padding: 2rem;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  font-size: 1.2rem;
+}
+.box-3 {
+  background-color: #51a6ad;
+  margin-top: 0;
+  padding: 2rem;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  font-size: 1.2rem;
+}
