@@ -26,6 +26,7 @@
   width: 100%;
   overflow: hidden;
   color: black;
+  font-size: 1.2rem;
 }
 .box-3 {
   background-color: #51a6ad;
@@ -34,4 +35,5 @@
   width: 100%;
   overflow: hidden;
   color: white;
+  font-size: 1.2rem;
 }
