@@ -171,7 +171,23 @@
     </div>
 </div>
 
-
+<!-- DISPLAY ALL AGES  -->
+<div class="imageGroup" *ngIf="allAges">
+    <div class="individualPet" *ngFor="let dog of ageArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
 
 <!-- DISPLAY BREEDS  -->
 <div class="imageGroup" *ngIf="showBreeds">

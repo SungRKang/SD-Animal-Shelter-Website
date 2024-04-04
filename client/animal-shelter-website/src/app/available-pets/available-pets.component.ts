@@ -39,6 +39,7 @@ export class AvailablePetsComponent implements OnInit{
   anySex: boolean = true; 
   zero: boolean = false;
   five: boolean = false;
+  allAges : boolean = false;
   anyAge: boolean = false;
   showBreeds: boolean = false;
   showGender: boolean = false;
@@ -198,6 +199,9 @@ export class AvailablePetsComponent implements OnInit{
         this.genderArr.push(this.dogs[obj]);
       }
     }
+    if(gender == "Any Sex"){
+      this.genderArr = this.dogs;
+    }
 
     if(age != "Any Age"){
       this.genderArr = this.checkAge(this.genderArr, gender, age, "gender");   // check if user selected age filter 
@@ -212,42 +216,11 @@ export class AvailablePetsComponent implements OnInit{
       console.log("months", this.months);
       this.genderArr = this.checkLOS(this.genderArr, gender, "gender" );
     }
-    //this.checkAge(this.genderArr, gender, "gender");
-    // if(this.ageArr.length != 0){
-    //   console.log("ageArr length not 0",this.ageArr);
-    //   this.genderArr = [];
-    //   if(this.ageButtonName == "0-5"){
-    //     for(const obj in this.ageArr){
-    //       if(this.ageArr[obj].gender == gender && this.ageArr[obj].age < 5){
-    //         this.genderArr.push(this.ageArr[obj]);
-    //       }
-    //     }
-    //   }
-    //   else if(this.ageButtonName == "5+"){
-    //     for(const obj in this.ageArr){
-    //       if(this.ageArr[obj].gender == gender && this.ageArr[obj].age > 5 ){
-    //         this.genderArr.push(this.ageArr[obj]);
-    //       }
-    //     }
-    //   }
-    //   this.ageArr = [];
-    // }
 
-    // if(this.breedButtonName != "Any Breed"){
-    //   const breed = this.breedButtonName;
-    //   this.genderArr = [];
-    //   for(const obj in this.dogs){
-    //     if(this.dogs[obj].breed == breed && this.dogs[obj].gender == gender){
-    //       this.genderArr.push(this.dogs[obj]);
-    //     }
-    //   }
-    //   this.breedArr = [];
-    //   this.ageArr = [];
+    
+    // if(age == "Any Age"){
+    //   this.genderArr = this.checkAge(this.genderArr, gender, age, "gender");   // check if user selected age filter 
     // }
-
-    if(gender == "Any Sex"){
-      this.genderArr = this.dogs;
-    }
     
   }
 
@@ -255,20 +228,57 @@ export class AvailablePetsComponent implements OnInit{
     this.anySex = false;      // dont displayy all pets
     this.ageButtonName = age; // set the age button name to the selected age range
     this.ageIsOpen = false;   // close the age button after the user clicks it
+    this.ageArr = [];
+    this.ageButtonName = age;
     const gender = this.sexButtonName;
     const breed = this.breedButtonName;
     const size = this.sizeButtonName;
     const LOS = this.lengthButtonName;
-    if(age == "0-5"){         // if user clicks the age rane 0-5
-      this.ageArr = [];       // clear array of previous clicks
+    
+    if(age == "Any Age"){         // if user clicks the age rane 0-5
+      this.ageArr = [];
+      this.zero = false;       // only display the "zero" section in html
+      this.five = false;
+      this.allAges = true;
+      if(gender != "Any Sex"){
+        for(const obj in this.dogs){
+          if(this.dogs[obj].gender == gender){
+            console.log(this.dogs[obj]);
+            this.ageArr.push(this.dogs[obj]);
+          }
+        }
+      }
+      if(breed != "Any Breed"){
+        for(const obj in this.dogs){
+          if(this.dogs[obj].breed == breed){
+            console.log(this.dogs[obj]);
+            this.ageArr.push(this.dogs[obj]);
+          }
+        }
+      }
+      if(size != "Any Size"){
+        for(const obj in this.dogs){
+          if(this.dogs[obj].size == size){
+            console.log(this.dogs[obj]);
+            this.ageArr.push(this.dogs[obj]);
+          }
+        }
+      }
+      if(LOS != "Any Length of Stay"){
+        console.log(this.lengthArr);
+      }
+      
+      
+    }
+    
+    else if(age == "0-5"){         // if user clicks the age rane 0-5
+      this.ageArr = [];
       this.zero = true;       // only display the "zero" section in html
       this.five = false;
-      
       for(const obj in this.dogs){
         if(this.dogs[obj].age < 5){         
           this.ageArr.push(this.dogs[obj]); //append all the dogs that have age < 5
         }
-        console.log(this.dogs[obj].age);
       }
       console.log("age 0", this.ageArr);
 
@@ -285,37 +295,10 @@ export class AvailablePetsComponent implements OnInit{
       if(LOS != "Any Length of Stay"){
         this.ageArr = this.checkLOS(this.ageArr, age, "age");   // check if user selected age filter 
       }
-      // if(breed != "Any Breed"){
-      //   this.ageArr = this.checkBreed(this.ageArr, breed, "breed");   // check if user selected age filter 
+      // if(gender == "Any Sex"){
+      //   this.ageArr = this.checkGender(this.ageArr, age, gender,"age");   // check if user selected age filter 
       // }
       
-      // if(this.sexButtonName != "Any Sex"){
-      //   this.ageArr = [];
-      //   const name = this.sexButtonName;
-      //   console.log("SexbuttonName", name);
-      //   console.log("genderArr",this.genderArr);
-
-      //   for(const obj in this.dogs){
-      //     if(this.dogs[obj].gender == name && this.dogs[obj].age < 5){
-      //       console.log("obj",this.dogs[obj]);
-      //       this.ageArr.push(this.dogs[obj]);
-      //     }
-      //   }
-      // }
-
-      //check if other filters are clicked 
-      // if(this.genderArr.length != 0){
-      //   this.ageArr = [];
-      //   for(const obj in this.genderArr){
-      //     if(this.genderArr[obj].age < 5){
-      //       console.log("female 0-5", this.genderArr[obj]);
-      //       this.ageArr.push(this.genderArr[obj]);
-      //     }
-      //   }
-      //   this.genderArr = [];
-      // }
-
-      // console.log("zero was clicked");
     }
     else if(age == "5+"){
       this.ageArr = [];
@@ -341,56 +324,10 @@ export class AvailablePetsComponent implements OnInit{
       if(LOS != "Any Length of Stay"){
         this.ageArr = this.checkLOS(this.ageArr, age, "age");   // check if user selected age filter 
       }
-      // if(this.genderArr.length != 0){
-      //   this.ageArr = [];
-      //   for(const obj in this.genderArr){
-      //     if(this.genderArr[obj].age > 5){
-      //       console.log("female 5+", this.genderArr[obj]);
-      //       this.ageArr.push(this.genderArr[obj]);
-      //     }
-      //   }
-      //   this.genderArr= [];
-      // }
-
-      // if(this.sexButtonName != "Any Sex"){
-      //   this.ageArr = [];
-      //   const name = this.sexButtonName;
-      //   console.log("SexbuttonName", name);
-      //   console.log("genderArr",this.genderArr);
-
-      //   for(const obj in this.dogs){
-      //     if(this.dogs[obj].gender == name && this.dogs[obj].age > 5){
-      //       this.ageArr.push(this.dogs[obj]);
-      //     }
-      //   }
-      // }
-
-      //console.log("ageArr",this.ageArr);
+      
       console.log("female was clicked");
     }
-    else if(age == "Any Age"){
-      // this.ageArr = [];
-      // const name = this.sexButtonName;
-      // if(this.sexButtonName != "Any Sex"){
-      //   for(const obj in this.dogs){
-      //     if(this.dogs[obj].gender == name && this.dogs[obj].age > 5){
-      //       this.ageArr.push(this.dogs[obj]);
-      //     }
-      //   }
-      // }    
-      if(this.sexButtonName != "Any Sex"){
-        this.ageArr = this.checkGender(this.ageArr, age, gender, "age");   // check if user selected age filter 
-      }
-      if(breed != "Any Breed"){
-        this.ageArr = this.checkBreed(this.ageArr, age, breed, "age");   // check if user selected age filter 
-      }
-      if(size != "Any Size"){
-        this.ageArr = this.checkSize(this.ageArr, age, size, "age");   // check if user selected age filter 
-      }
-      if(LOS != "Any Length of Stay"){
-        this.ageArr = this.checkLOS(this.ageArr, age, "age");   // check if user selected age filter 
-      }  
-    }
+   
     
   }
 
@@ -409,7 +346,9 @@ export class AvailablePetsComponent implements OnInit{
         this.breedArr.push(this.dogs[obj]);
       }
     }
-
+    if(breed == "Any Breed"){
+      this.breedArr = this.dogs;
+    }
     // check if gender filters are selected
     if(gender != "Any Sex"){
       this.breedArr = this.checkGender(this.breedArr, breed, gender, "breed");   // check if user selected age filter 
@@ -423,65 +362,10 @@ export class AvailablePetsComponent implements OnInit{
     if(LOS != "Any Length of Stay"){
       this.breedArr = this.checkLOS(this.breedArr, breed, "breed");   // check if user selected age filter 
     }
-
-    // if(this.sexButtonName != "Any Sex"){
-    //   this.breedArr = [];
-    //   const name = this.sexButtonName;
-      
-    //   for(const obj in this.dogs){
-    //     if(this.dogs[obj].gender == name && this.dogs[obj].breed == breed){
-    //       this.breedArr.push(this.dogs[obj]);
-    //     }
-    //     this.genderArr=[];
-    //   }
-    // }
-    // if(this.ageButtonName != "Any Age"){
-    //   const age = this.ageButtonName;
-    //   // if 0-5 is selected 
-    //   this.breedArr = [];
-    //   // thorugh through array and get animals with breed and under 5
-    //   if(age == "0-5"){
-    //     for (const obj in this.dogs){
-    //       if(this.dogs[obj].age < 5 && this.dogs[obj].breed == breed){
-    //         this.breedArr.push(this.dogs[obj]);
-    //       }
-    //     }
-    //     this.clearArrays();
-    //   }
-    //   // if 5+ selected, look through array and get animals with breed and age >5
-    //   else if(age == "5+"){
-    //     for (const obj in this.dogs){
-    //       if(this.dogs[obj].age < 5 && this.dogs[obj].breed == breed){
-    //         this.breedArr.push(this.dogs[obj]);
-    //       }
-    //     }
-    //     this.clearArrays();
-    //   }
+    // if(gender == "Any Sex"){
+    //   this.breedArr = this.checkGender(this.breedArr, breed, gender,"age");   // check if user selected age filter 
     // }
 
-    // if(this.sexButtonName != "Any Sex" && this.ageButtonName != "Any Age"){
-    //   console.log("Gender and age not any");
-    //   const gender = this.sexButtonName;
-    //   const age = this.ageButtonName;
-    //   this.breedArr = [];
-    //   if(age == "0-5"){
-    //     for (const obj in this.dogs){
-    //       if(this.dogs[obj].age < 5 && this.dogs[obj].breed == breed && this.dogs[obj].gender == gender){
-    //         this.breedArr.push(this.dogs[obj]);
-    //       }
-    //     }
-    //     this.clearArrays();
-    //   }
-    //   // if 5+ selected, look through array and get animals with breed and age >5
-    //   else if(age == "5+"){
-    //     for (const obj in this.dogs){
-    //       if(this.dogs[obj].age > 5 && this.dogs[obj].breed == breed && this.dogs[obj].gender == gender){
-    //         this.breedArr.push(this.dogs[obj]);
-    //       }
-    //     }
-    //     this.clearArrays();
-    //   }
-    // }
     console.log("breed clicked", breed);
     console.log("breedArr", this.breedArr);
   }
@@ -520,6 +404,9 @@ export class AvailablePetsComponent implements OnInit{
     if(LOS != "Any Length of Stay"){
       this.sizeArr = this.checkLOS(this.sizeArr, size, "size");   // check if user selected age filter 
     }
+    // if(gender == "Any Sex"){
+    //   this.sizeArr = this.checkGender(this.sizeArr, size, gender,"age");   // check if user selected age filter 
+    // }
     
     // this.clearArrays();
   }
@@ -559,6 +446,7 @@ export class AvailablePetsComponent implements OnInit{
       }
       
     }
+    
     if(gender != "Any Sex"){
       this.lengthArr = this.checkGender(this.lengthArr, length, gender,"age");   // check if user selected age filter 
     }
@@ -571,85 +459,50 @@ export class AvailablePetsComponent implements OnInit{
     if(size != "Any Size"){
       this.lengthArr = this.checkSize(this.lengthArr, length, size, "gender" );
     }
-
-    
-
-    // if(gender != "Any Sex"){
-    //   this.genderArr = [];
-    //   for (const dog in this.lengthArr){
-    //     if(this.lengthArr[dog].gender == gender){
-    //       this.genderArr.push(this.lengthArr[dog]);
-    //     }
-
-    //   }
-    //   this.lengthArr = this.genderArr;
-    // } 
-    // if(age != "Any Age"){
-    //   this.ageArr = [];
-    //   if(age == "0-5"){
-    //     for (const dog in this.lengthArr){
-    //       if (this.lengthArr[dog].age < 5){
-    //         this.ageArr.push(this.lengthArr[dog]);
-    //       }
-    //     }
-    //     this.lengthArr = this.ageArr;
-    //   }
-    //   else if(age == "5+"){
-    //     for (const dog in this.lengthArr){
-    //       if (this.lengthArr[dog].age > 5){
-    //         this.ageArr.push(this.lengthArr[dog]);
-    //       }
-    //     }
-    //     this.lengthArr = this.ageArr;
-    //   }
-
-      
+    // if(gender == "Any Sex"){
+    //   this.lengthArr = this.checkGender(this.lengthArr, length, gender,"age");   // check if user selected age filter 
     // }
-    // if(breed != "Any Breed"){
-    //   this.breedArr = [];
-    //   for (const dog in this.lengthArr){
-    //     if (this.lengthArr[dog].breed == breed){
-    //       this.breedArr.push(this.lengthArr[dog]);
-    //     }
-    //   }
-    //   this.lengthArr = this.breedArr;
-    // }
-    // if(size != "Any Size"){
-    //   this.sizeArr = [];
-    //   for (const dog in this.lengthArr){
-    //     if (this.lengthArr[dog].size == size){
-    //       this.sizeArr.push(this.lengthArr[dog]);
-    //     }
-    //   }    
-    //   this.lengthArr = this.sizeArr;
-    // }
-    
+
+  
     this.clearArrays();
     return this.months;
   }
 
   checkGender(array: IDog[], compareString: string, gender: string, attribute: DogAttribute) : IDog[]{
-      this.genderArr = [];
+    console.log("hello");  
+    console.log("compareString is", compareString);
+    console.log("gender is",gender);
+    this.genderArr = [];
       if(compareString == "0-5"){
-        for(const obj of array){
-          if(obj.age < 5 && obj.gender == gender){
-            this.genderArr.push(obj);
+        if(gender == "Any Sex"){
+          console.log("array is", array);
+          this.genderArr = array;
+        }
+        else{
+          for(const obj of array){
+            if(obj.age < 5 && obj.gender == gender){
+              this.genderArr.push(obj);
+            }
           }
         }
       }
       else if(compareString == "5+"){
-        for(const obj of array){
-          if(obj.age > 5 && obj.gender == gender){
-            this.genderArr.push(obj);
+        if(gender == "Any Sex"){
+          console.log("array is", array);
+          this.genderArr = array;
+        }
+        else {
+          for(const obj of array){
+            if(obj.age > 5 && obj.gender == gender){
+              this.genderArr.push(obj);
+            }
           }
         }
+        
       }
-      else if(compareString.includes("Any")){
-        for(const obj in this.dogs){
-          if(this.dogs[obj].gender == gender){
-            this.genderArr.push(this.dogs[obj]);
-          }
-        }
+      else if(gender.includes("Any")){
+        console.log("here");
+        this.genderArr = array;
       }
       else if(compareString == "0-6" || "6-12" || "1+"){
         for(const obj of array){
@@ -700,6 +553,10 @@ export class AvailablePetsComponent implements OnInit{
               this.ageArr.push(obj);
             }
           }
+        }
+        else if(age.includes("Any")){
+          console.log("here");
+          this.ageArr = array;
         }
         else if(age == "5+"){
           console.log("5+", this.ageArr);
