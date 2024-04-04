@@ -14,6 +14,8 @@ export class OtherRescuesComponent {
   rescueName : string = "";
   cell: string = "";
   site: string = "";
+  email: string = "";
+  location : string = "";
 
   imageArray: string[] = [
     "https://fromforgottentoforever.com/wp-content/uploads/2017/01/Logo.png",
@@ -40,12 +42,12 @@ export class OtherRescuesComponent {
   ];
 
   phoneNumber: string[] = [
-    "no phone",
-    "no phone",
+    "N/A",
+    "N/A",
     "(719) 686-7707",
     "(719) 473-1741",
     "(719) 264-6460",
-    "No phone",
+    "N/A",
     "303-595-4917, 720-266-6081, 720-726-4552, 303-595-0532",
     "(303)655-9696",
     "(719)543-6464"
@@ -54,25 +56,25 @@ export class OtherRescuesComponent {
   emails: string[] = [
     "https://www.fromforgottentoforever.com/contact-us/",
     "N/A",
-    "(719) 686-7707",
-    "(719) 473-1741",
-    "(719) 264-6460",
-    "No phone",
-    "303-595-4917, 720-266-6081, 720-726-4552, 303-595-0532",
-    "(303)655-9696",
-    "(719)543-6464"
+    "office@tcras.org",
+    "info@hsppr.org",
+    "info@haveanicedog.org",
+    "kelley@luckydayrescue.org",
+    "dogadoptioncenter@maxfund.org, catshelter@maxfund.org, administrator@maxfund.org, appointment@maxfund.org",
+    "N/A",
+    "https://pawspueblo.org/contact/"
   ];
 
   locations: string[] = [
     "Colorado Springs, CO",
     "Colorado Springs, CO",
-    "(719) 686-7707",
-    "(719) 473-1741",
-    "(719) 264-6460",
-    "No phone",
-    "303-595-4917, 720-266-6081, 720-726-4552, 303-595-0532",
-    "(303)655-9696",
-    "(719)543-6464"
+    "Divide, CO",
+    "Colorado Springs, CO",
+    "Colorado Springs, CO",
+    "Aspen, CO",
+    "Denver, CO",
+    "Brighton, CO",
+    "Pueblo, CO"
   ];
 
   website: string[] = [
@@ -91,15 +93,14 @@ export class OtherRescuesComponent {
   displayPopUp(image: number) : string{
     this.showPopUp = !this.showPopUp;
     this.imageString = this.imageArray[image];
-    return this.imageString;
+    this.rescueName = this.rescueNames[image];
+    this.cell = this.phoneNumber[image];
+    this.site = this.website[image];
+    this.email = this.emails[image];
+    this.location = this.locations[image];
+    return this.imageString, this.rescueName, this.cell, this.site, this.email, this.location;
   }
-  getName(rescueIndex : number): string{
-    this.rescueName = this.rescueNames[rescueIndex];
-    this.cell = this.phoneNumber[rescueIndex];
-    this.site = this.website[rescueIndex];
-    return this.rescueName, this.cell, this.site;
-    
-  }
+  
 
   closePopUp(){
     this.showPopUp = false;
