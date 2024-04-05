@@ -54,15 +54,15 @@ export class OtherRescuesComponent {
   ];
 
   emails: string[] = [
-    "https://www.fromforgottentoforever.com/contact-us/",
-    "N/A",
+    "info@fromforgottentoforever.org",
+    "info@chihuahua.org",
     "office@tcras.org",
     "info@hsppr.org",
     "info@haveanicedog.org",
     "kelley@luckydayrescue.org",
     "dogadoptioncenter@maxfund.org, catshelter@maxfund.org, administrator@maxfund.org, appointment@maxfund.org",
-    "N/A",
-    "https://pawspueblo.org/contact/"
+    "info@lifelinepuppycenter.org",
+    "info@pawsforlife.org"
   ];
 
   locations: string[] = [

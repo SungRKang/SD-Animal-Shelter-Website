@@ -26,19 +26,21 @@
 <div *ngIf="showPopUp" class="popup-container">
     <div class="popup-contents">
         <img [src]="imageString" class="popup-image">
-        <div>
-            <a style="font-size: xx-large;"> {{rescueName}} </a>
+        <div class="popup-description">
+            <a class="rescueName"> {{rescueName}} </a>
             <br>
             <br>
             <a> Contact Info: </a>
             <br>
             <a> Cell: {{cell}}</a>
             <br>
-            <a> Email: {{email}} </a>
+            <a> Email: </a>
+            <a href="mailto: name@email.com" class="link"> {{email}} </a>
             <br>
             <a> Location: {{location}} </a>
             <br>
-            <a> Website: {{site}} </a>
+            <a> Website: </a>
+            <a href="{{site}} " target="_blank" class="link"> {{site}} </a>
             <br>
         </div>    
     </div>

@@ -36,12 +36,29 @@
     overflow-y: scroll;
     
 }
-.popup-container a{
+.popup-description{
     color:white;
     font-size: large;
     text-align: center;
     justify-content: center;
+    line-height: 1.5rem;
+    font-family: "Libre Baskerville", serif;
+}
 
+.link{
+    text-decoration: none;
+    color:white;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+
+.rescueName{
+    font-family: "Libre Franklin", sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
 }
 .insidePopUp{
     align-items: center;
