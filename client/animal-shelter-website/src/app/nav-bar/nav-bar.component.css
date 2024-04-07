@@ -13,7 +13,9 @@
   background-color:#093F52;
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;
-
+  justify-content: center; 
+  align-items: center;
+  display: flex;
 }
 
 .mainNav a {
