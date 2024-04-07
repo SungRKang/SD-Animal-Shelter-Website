@@ -1,34 +1,122 @@
-/* surrendering-pet.component.css */
+.title-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adjust the space between the text block and the image */
+  margin-bottom: 20px; /* Adds some space before the form starts */
+}
+
+.title-paragraph-container {
+
+  max-width: 30%; 
+}
+
+.surrendering-dog-image {
+  margin-top: 30px;
+  width: 500px; /* Adjust the width as necessary */
+  height: auto; /* Keeps the aspect ratio of the image */
+}
+
+
 .container {
-  max-width: 800px; /* Increased width */
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a flexible grid */
-  gap: 20px; /* Adds space between grid items */
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-label {
+.flex-row-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__group.field {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  width: calc(50% - 10px); /* Adjust the subtraction value to control spacing between fields */
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.form__group.field-single{
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  width: calc(100% - 10px); /* Adjust the subtraction value to control spacing between fields */
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+.form__group.field-single .form__field {
+  width: 100%; /* This ensures the input fields fill their container */
+  max-width: none; /* Overrides any max-width that might be applied elsewhere */
+}
+
+.form__field {
+  font-family: inherit;
+  width: 500px;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b; /* Gray */
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:focus + .form__label {
+  font-size: 1rem;
+  color: #11998e; /* Primary */
+  font-weight: 700;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d); /* Primary to Secondary */
+  border-image-slice: 1;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
   display: block;
-  margin-top: 20px;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b; /* Gray */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submit-button button {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 10px 15px;
+  background-color: #11998e; /* Primary */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr; /* Stacks the form fields in a single column on smaller screens */
-  }
-}
-
-button {
-  grid-column: 1 / -1; /* Makes the submit button span all columns */
-  margin-top: 20px;
-  padding: 10px 20px;
+.submit-button button:hover {
+  background-color: #38ef7d; /* Secondary */
 }

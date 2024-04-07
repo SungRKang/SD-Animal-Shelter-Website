@@ -21,7 +21,6 @@ export class SurrenderingPetComponent {
       petAge: ['', Validators.required],
       petBreed: ['', Validators.required],
       reason: ['', Validators.required],
-      ownerName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       issues: [''],
