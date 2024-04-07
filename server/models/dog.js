@@ -30,13 +30,30 @@ const dogSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  size: {
+    type: String,
+    required: true
+  },
   DOB: {
     type: Date,
     required: true
   },
+  fee: {
+    type: Number,
+    required: true
+  },
+  shelterDate: {
+    type: Date,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  }
 
   // add other fields as needed
 });
 
 export const Dog = mongoose.model('Dog', dogSchema);
+
 
