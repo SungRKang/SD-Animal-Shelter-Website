@@ -1,0 +1,99 @@
+.image{
+    width: 18rem;
+    height: 8rem;
+    margin: 5rem;
+    cursor: pointer;
+}
+.square-image{
+    width: 12rem;
+    height: 12rem;
+    margin: 5rem;
+    cursor: pointer;
+}
+.popup-image{
+    width: 18rem;
+    height: 8rem;
+    margin: 2rem;
+    cursor: pointer;
+}
+.popup-square{
+    width: 12rem;
+    height: 12rem;
+    margin: 2rem;
+    cursor: pointer;
+}
+.imageGroup{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.popup-container {
+    position: fixed; /* Use fixed position to keep it centered while scrolling */
+    top: 50%; /* Position it 50% from the top of the viewport */
+    left: 50%; /* Position it 50% from the left of the viewport */
+    transform: translate(-50%, -50%); /* Center the container */
+    width: 50%;
+    height: 50%;
+    background-color: #51a6ad;
+    justify-content: center; /* For flexbox alignment */
+    align-items: center; /* For flexbox alignment */
+    overflow-y: scroll;
+    
+}
+.popup-description{
+    color:white;
+    font-size: large;
+    text-align: center;
+    justify-content: center;
+    line-height: 1.5rem;
+    font-family: "Libre Baskerville", serif;
+}
+
+.link{
+    text-decoration: none;
+    color:white;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+
+.rescueName{
+    font-family: "Libre Franklin", sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.insidePopUp{
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+}
+
+.closeButton{
+    position: absolute;
+    top: 1.2rem; /* Adjust as needed */
+    right: 1.2rem; /* Adjust as needed */
+    width: 3rem;
+    height: 3rem;
+    filter: invert(100%);
+    cursor: pointer;
+}
+.closeX {
+    position: absolute;
+    top: 2rem; /* Adjust as needed */
+    right: 2rem; /* Adjust as needed */
+    color: white; /* Add color to make it visible */
+    font-size: x-large; /* Adjust as needed */
+    cursor: pointer;
+}
