@@ -1,1 +1,59 @@
-<p>other-rescues works!</p>
+<div class="imageGroup">
+    <img src="https://fromforgottentoforever.com/wp-content/uploads/2017/01/Logo.png" class="image"
+    (click)="displayPopUp(0)" (click)="rectangle()"
+    >
+    <img src="https://chihuahua-smalldogrescue.org/wp-content/uploads/2017/06/banner-logo-2.jpg" class="image"
+    (click)="displayPopUp(1)"  (click)="rectangle()"
+    >
+    <img src="https://pbs.twimg.com/media/Ec7quOgXgAIUPfM?format=jpg&name=large" class="image"
+    (click)="displayPopUp(2)" (click)="rectangle()"
+    >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxW_z_NMDxHdwIRwazwjBKj60EPh_B5ojGeNWuHP28Kg&s"  class="square-image"
+    (click)="displayPopUp(3)" (click)="square()"
+    >
+    <img src="https://haveanicedog.org/assets/img/abrt-logo2.png"  class="image"
+    (click)="displayPopUp(4)" (click)="rectangle()" 
+    >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVy5PAOoGvc-jLakvOU4J6xvk37lc4jOD0zEqSUoUTTA&s"  class="square-image"
+    (click)="displayPopUp(5)" (click)="square()"
+    >
+    <img src="https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/gy9es6t4f0y1ilyqvkav.jpg"  class="image"
+    (click)="displayPopUp(6)" (click)="rectangle()"
+    >
+    <img src="https://www.lifelinepuppy.org/assets/images/logo.png" class="square-image"
+    (click)="displayPopUp(7)" (click)="square()"
+    >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRPZfXE7GzmyFS0CCHNH9wsnGBbjxi_zqPFf8KLpvDEQ&s" class="image"
+    (click)="displayPopUp(8)" (click)="rectangle()">
+</div>
+
+<div *ngIf="showPopUp" class="popup-container">
+    <div class="popup-contents">
+        <a href="{{site}}" target="_blank">
+            <img *ngIf="rectangleImage" [src]="imageString" class="popup-image" >
+        </a>
+        <a href="{{site}}" target="_blank">
+            <img *ngIf="squareImage" [src]="imageString" class="popup-square">
+        </a>
+        <div class="popup-description">
+            <a class="rescueName"> {{rescueName}} </a>
+            <br>
+            <br>
+            <a> Contact Info: </a>
+            <br>
+            <a> Cell: {{cell}}</a>
+            <br>
+            <a> Email: </a>
+            <a href="mailto: name@email.com" class="link"> {{email}} </a>
+            <br>
+            <a> Location: {{location}} </a>
+            <br>
+            <a> Website: </a>
+            <a href="{{site}} " target="_blank" class="link"> {{site}} </a>
+            <br>
+        </div>    
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton" (click)="closePopUp()">
+    <div class="closeX" (click)="closePopUp()" > X </div>
+   
+</div>
