@@ -1,36 +1,57 @@
-<p>surrendering-pet works!</p>
-<!-- pet-surrender-form.component.html -->
+<div class="title-image-container">
+  <div class="title-paragraph-container">
+    <h1>Surrendering Your Pet</h1>
+    <p class="description-paragraph">We are very sorry to hear that you want to surrender your pet. Please give us more information about the pet and your situation so that we can best help you.</p>
+  </div>
+  <img src="assets/pictures/surrenderingDog.jpg" alt="Dog being surrendered" class="surrendering-dog-image">
+</div>
+
 <div class="container">
-  <h1>Pet Surrender Form</h1>
   <form [formGroup]="surrenderForm" (ngSubmit)="onSubmit()">
-    
-    <label for="petName">Pet's Name:</label>
-    <input type="text" id="petName" formControlName="petName" required>
-    
-    <label for="petAge">Pet's Age:</label>
-    <input type="number" id="petAge" formControlName="petAge" required>
-    
-    <label for="petBreed">Pet's Breed:</label>
-    <input type="text" id="petBreed" formControlName="petBreed" required>
-    
-    <label for="reason">Reason for Surrendering:</label>
-    <textarea id="reason" formControlName="reason" required></textarea>
-    
-    <label for="ownerName">Your Name:</label>
-    <input type="text" id="ownerName" formControlName="ownerName" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email" required>
-    
-    <label for="phone">Phone:</label>
-    <input type="tel" id="phone" formControlName="phone" required>
-    
-    <label for="issues">Medical or Behavioral Issues:</label>
-    <textarea id="issues" formControlName="issues"></textarea>
-    
-    <label for="additionalComments">Additional Comments:</label>
-    <textarea id="additionalComments" formControlName="additionalComments"></textarea>
-    
-    <button type="submit" [disabled]="!surrenderForm.valid">Submit</button>
+    <!-- Flex container for side-by-side fields -->
+    <div class="flex-row-container">
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" formControlName="petName" name="name" id='petName' required />
+        <label for="name" class="form__label">Pet Name</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Age" formControlName="petAge" name="age" id='petAge' required />
+        <label for="age" class="form__label">Pet Age</label>
+      </div>
+    </div>
+    <!-- Another flex container for the next two fields -->
+    <div class="flex-row-container">
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Breed" formControlName="petBreed" name="petBreed" id='breed' required />
+        <label for="breed" class="form__label">Breed</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Reason for surrendering" formControlName="reason" name="reason" id='reason' required />
+        <label for="reason" class="form__label">Reason</label>
+      </div>
+    </div>
+    <!-- Repeat for the remaining fields -->
+    <div class="flex-row-container">
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Email" formControlName="email" name="email" id='email' required />
+        <label for="email" class="form__label">Email</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Phone"formControlName="phone" name="phone" id='phone' required />
+        <label for="phone" class="form__label">Phone</label>
+      </div>
+    </div>
+    <div class="form__group field-single">
+      <input type="input" class="form__field" placeholder="Medical or Behavioral Issues" formControlName="issues" name="issues" id='issues' />
+      <label for="issues" class="form__label">Medical or Behavioral Issues</label>
+    </div>
+    <div class="form__group field-single">
+      <input type="input" class="form__field" placeholder="Additional Comments" formControlName="additionalComments" name="comments" id='additionalComments' />
+      <label for="additionalComments" class="form__label">Additional Comments</label>
+    </div>
+    <!-- Submit button -->
+    <div class="submit-button">
+      <button type="submit" [disabled]="!surrenderForm.valid">Submit</button>
+    </div>
   </form>
 </div>

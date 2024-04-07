@@ -35,7 +35,6 @@ router.post('/surrender', async (req, res) => {
                <li>Pet's Age: ${petAge}</li>
                <li>Pet's Breed: ${petBreed}</li>
                <li>Reason for Surrendering: ${reason}</li>
-               <li>Owner's Name: ${ownerName}</li>
                <li>Email: ${email}</li>
                <li>Phone: ${phone}</li>
                <li>Issues: ${issues}</li>
