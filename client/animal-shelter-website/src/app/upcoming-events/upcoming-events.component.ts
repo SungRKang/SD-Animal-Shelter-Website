@@ -1,39 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import { GoogleCalendarService } from './google-calendar.service';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CalendarOptions, EventInput } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
-  imports: [
-    CommonModule
-  ],
-  templateUrl: './upcoming-events.component.html',
+  imports: [CommonModule, FullCalendarModule],
+  template: `
+    <full-calendar #calendar [options]="calendarOptions" [events]="eventsPromise | async"></full-calendar>
+    <button (click)="toggleWeekends()">Toggle Weekends</button>
+  `,
   styleUrls: ['./upcoming-events.component.css']
 })
-export class UpcomingEventsComponent implements OnInit {
-  public events: any[] = []; // Consider typing this with an Event interface
+export class UpcomingEventsComponent {
+  @ViewChild('calendar') calendarComponent!: FullCalendarComponent;
 
-  constructor(private calendarService: GoogleCalendarService) {}
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay',
+    },
+    weekends: true,
+    dateClick: this.handleDateClick.bind(this),
+    eventContent: (arg) => {
+      return { html: `<b>${arg.event.title}</b>` };
+    }
+  };
 
-  ngOnInit() {
-    this.calendarService.loadGoogleClient().then(() => {
-      const calendarId = 'l0dfri6kmna1ukkbin6d0sjitr45sccr@import.calendar.google.com';
-      this.loadEvents(calendarId);
-    }).catch((error) => {
-      console.error('Error loading Google API client:', error);
-    });
+  eventsPromise: Promise<EventInput[]> = Promise.resolve([
+    { title: 'Adoption Event', date: '2024-04-07' },
+    { title: 'Feeding pets', date: '2024-04-09' }
+  ]);
+
+  handleDateClick(arg: { dateStr: string; }) {
+    alert('Date clicked: ' + arg.dateStr);
   }
 
-  public loadEvents(calendarId: string) {
-    // Subscribe to the Observable returned by listEvents
-    this.calendarService.listEvents(calendarId).subscribe({
-      next: (events) => {
-        this.events = events;
-      },
-      error: (error) => {
-        console.error('Error loading events:', error);
-      }
-    });
+  toggleWeekends() {
+    this.calendarOptions.weekends = !this.calendarOptions.weekends;
+  }
+
+  someMethod() {
+    if (this.calendarComponent) {
+      let calendarApi = this.calendarComponent.getApi();
+      calendarApi.next();
+    }
   }
 }

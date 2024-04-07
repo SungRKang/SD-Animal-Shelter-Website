@@ -1,10 +1,2 @@
-<div>
-    <h2>Events</h2>
-    <ul>
-      <li *ngFor="let event of events">
-        <h3>{{ event.summary }}</h3>
-        <p>Date: {{ event.start.dateTime | date:'EEEE, MMMM d, y' }}</p>
-        <p>Details: {{ event.description }}</p>
-      </li>
-    </ul>
-  </div>
+<full-calendar #calendar [options]="calendarOptions" [events]="eventsPromise | async"></full-calendar>
+<button (click)="toggleWeekends()">Toggle Weekends</button>
