@@ -1,1 +1,279 @@
-<p>available-pets works!</p>
+<!-- TITLE OF PAGE -->
+<div>
+    <h1 class="pageHeader"> Available Pets </h1>
+</div>
+
+<!-- FILTERING BUTTONS -->
+<div class="filteringButtonGroup" > 
+    <div (click)="getGenders()">
+        <button (click)="toggleFilter('sexIsOpen')" class="dropdown"> {{sexButtonName}} </button>
+        <div class="filter-content" *ngIf="sexIsOpen">
+            <button class="dropdown">
+                <div *ngFor="let gender of genders" (click)="genderFilter(gender)" class="dropdown-content">
+                    <a> {{gender}} </a>
+                </div>
+                <a class="dropdown-content" (click)="genderFilter('Any Sex')"> Any Sex </a>
+            </button>
+        </div>
+    </div>
+    
+   <div >
+        <button (click)="toggleFilter('ageIsOpen')" class="dropdown"> {{ageButtonName}} </button>
+            <div class="filter-content" *ngIf="ageIsOpen" >
+                <button class="dropdown">
+                    
+                    <a class="dropdown-content" (click)="ageFilter('0-5')"> 0-5 </a>
+                    <a class="dropdown-content" (click)="ageFilter('5+')"> 5+ </a>
+                    <a class="dropdown-content" (click)="ageFilter('Any Age')"> Any Age </a>
+                    
+                </button>
+            </div>
+   </div>
+    
+    <div (click)="getBreeds()">
+        <button (click)="toggleFilter('breedIsOpen')" class="dropdown"> {{breedButtonName}} </button>
+        <div class="filter-content" *ngIf="breedIsOpen">
+            <button class="dropdown">
+                <div *ngFor="let breed of breeds" class="dropdown-content" (click)="breedFilter(breed)">  
+                    <a> {{breed}} </a>
+                </div>
+                <a class="dropdown-content" (click)="breedFilter('Any Breed')"> Any Breed </a>
+
+            </button>
+        </div>
+    
+    </div>
+
+
+    <div (click)="getSize()">
+        <button (click)="toggleFilter('sizeIsOpen')" class="dropdown"> {{sizeButtonName}} </button>
+            <div class="filter-content" *ngIf="sizeIsOpen">
+                <button class="dropdown">
+                    <div *ngFor="let size of sizes" class="dropdown-content" (click)="sizeFilter(size)">  
+                        <a> {{size}} </a>
+                    </div>    
+                    <a class="dropdown-content" (click)="sizeFilter('Any Size')"> Any Size </a>
+                </button>
+            </div>
+    </div>    
+    
+    <div>   
+        <button (click)="toggleFilter('lengthOfStayIsOpen')" class="dropdown"> 
+            {{lengthButtonName}}
+        </button>
+        <div class="filter-content" *ngIf="lengthOfStayIsOpen">
+            <button class="dropdown">
+                <a class="dropdown-content" (click)="lengthOfStayFilter('0-6')"> 0-6 Months </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('6-12')"> 6-12 Months </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('1+')"> 1+ Years </a>
+                <a class="dropdown-content" (click)="lengthOfStayFilter('Any Length of Stay')">Any Length of Stay </a>
+
+            </button>
+        </div>
+    </div>
+    
+    
+    <div>
+        <button (click)="toggleFilter('sortByIsopen')" class="dropdown"> {{sortByButtonName}} </button>
+        <div class="filter-content" *ngIf="sortByIsopen">
+            <button class="dropdown"> 
+
+                <a class="dropdown-content" (click)="sortByFilter('Age (ascending)')"> Age (ascending) </a>
+                <a class="dropdown-content" (click)="sortByFilter('Size (ascending)')"> Size (ascending) </a>
+                <a class="dropdown-content" (click)="sortByFilter('Length of Stay (ascending)')">  Length of Stay (ascending) </a>
+                <a class="dropdown-content" (click)="sortByFilter('Sort By')"> Sort By </a>
+
+            </button>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- DISPLAY ALL -->
+<div class="imageGroup" *ngIf="showAll">
+    <div class="individualPet" *ngFor="let dog of dogs"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+    
+<!-- DISPLAY GENDERS  -->
+<div class="imageGroup" *ngIf="showGender">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- DISPLAY AGES   -->
+<div class="imageGroup" *ngIf="showAge">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY ALL AGES  -->
+<div class="imageGroup" *ngIf="allAges">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY BREEDS  -->
+<div class="imageGroup" *ngIf="showBreeds">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY SIZES  -->
+<div class="imageGroup" *ngIf="showSizes">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY LENGTH OF STAY  -->
+<div class="imageGroup" *ngIf="showLengthOfStay">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- DISPLAY SORT  -->
+<div class="imageGroup" *ngIf="showSort">
+    <div class="individualPet" *ngFor="let dog of displayArr"> 
+        <div class="description">
+            <img [src]="imageArray[dog.dogId-1]" class="image" (click)="openPopUp(dog)">
+            <div class="nameTag">
+                {{ dog.name }} <span class="whitePaw"> &nbsp;🐾</span>
+            </div>
+            <a class="filterDescription"> 
+                {{ dog.gender}}  <br>
+                {{ dog.weight}} lbs    <br>
+                {{ dog.breed}}   <br>
+                {{ dog.age}} year(s)    <br>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- POP UP BOX -->
+    <div class="popup-container" *ngIf="popUpisOpen">
+        <div class="popup-box-top">
+            <img [src]="imageArray[index]" class="popup-image">
+            <a>
+                <span> Hi, I'm  {{name}} </span>
+                <br>
+                <br>
+                Gender: {{gender}} <br>
+                Color: {{color}} <br>
+                Breed: {{breed}} <br>
+                Estimated Age: {{age}} year(s) <br>
+                Weight: {{weight}} lbs <br>
+                DOB: {{DOB | date: 'yyyy-MM-dd'}} <br>
+                <br>
+                Adoption Fee: ${{fee}} <br>
+                
+            </a>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton"(click)="closePopUp()">
+            <div class="closeX" (click)="closePopUp()"> X </div>
+        </div>
+
+        <div class="popup-box-bottom">
+            <button> Adopt me</button>
+            <button> Support me</button>
+            <p>
+                A little about me: 
+                <br>
+                <br>
+                {{description}}
+            </p>
+        </div>
+    
+    </div>
+
+
+
+
