@@ -14,7 +14,13 @@
     width: 18rem;
     height: 8rem;
     margin: 2rem;
-
+    cursor: pointer;
+}
+.popup-square{
+    width: 12rem;
+    height: 12rem;
+    margin: 2rem;
+    cursor: pointer;
 }
 .imageGroup{
     display: flex;

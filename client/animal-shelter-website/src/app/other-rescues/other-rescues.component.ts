@@ -16,6 +16,8 @@ export class OtherRescuesComponent {
   site: string = "";
   email: string = "";
   location : string = "";
+  squareImage: boolean = false;
+  rectangleImage: boolean = false;
 
   imageArray: string[] = [
     "https://fromforgottentoforever.com/wp-content/uploads/2017/01/Logo.png",
@@ -48,7 +50,7 @@ export class OtherRescuesComponent {
     "(719) 473-1741",
     "(719) 264-6460",
     "N/A",
-    "303-595-4917, 720-266-6081, 720-726-4552, 303-595-0532",
+    "303-595-4917",
     "(303)655-9696",
     "(719)543-6464"
   ];
@@ -60,7 +62,7 @@ export class OtherRescuesComponent {
     "info@hsppr.org",
     "info@haveanicedog.org",
     "kelley@luckydayrescue.org",
-    "dogadoptioncenter@maxfund.org, catshelter@maxfund.org, administrator@maxfund.org, appointment@maxfund.org",
+    "dogadoptioncenter@maxfund.org",
     "info@lifelinepuppycenter.org",
     "info@pawsforlife.org"
   ];
@@ -100,11 +102,20 @@ export class OtherRescuesComponent {
     this.location = this.locations[image];
     return this.imageString, this.rescueName, this.cell, this.site, this.email, this.location;
   }
-  
-
   closePopUp(){
     this.showPopUp = false;
   }
+
+  rectangle(){
+    this.rectangleImage = true;
+    this.squareImage = false;
+  }
+
+  square(){
+    this.squareImage = true;
+    this.rectangleImage = false;
+  }
+
 
 }
 
