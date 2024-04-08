@@ -38,14 +38,12 @@ p {
   /* Division of section between left and right */
   #container {
     display: flex;
-    background-color: #51a6ad;
     align-content: center;
     justify-content: center;
     text-align: center;
   }
 
   #container div{
-    background-color: #51a6ad;
     align-items: center;
     margin: 3rem 3rem;
     width: 100%;
