@@ -1,4 +1,5 @@
 #container {
+#container {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -16,8 +17,17 @@
 
 #container > div {
   display: flex; /* Apply flex to direct children to manage size and alignment */
-  justify-content: center;
   flex-direction: column; /* Stack children vertically */
+  /* align-items: center; Center-align items horizontally */
+  margin: 3rem; /* Adjusted for consistency */
+  color: black;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+#container > div {
+  display: flex; /* Apply flex to direct children to manage size and alignment */
+  flex-direction: column; /* Stack children vertically */
+  /* align-items: center; Center-align items horizontally */
   margin: 3rem; /* Adjusted for consistency */
   color: black;
   flex-wrap: wrap; /* Allow items to wrap if needed */
@@ -25,9 +35,7 @@
 
 .logos {
   display: flex;
-  flex-direction: column; /* Stack flex items vertically */
-  justify-content: center; /* Vertically center content in the flex direction */
-  align-items: center; /* Horizontally center content in the cross-axis */
+  justify-content: center; /* Center the image inside the logos container */
   height: auto; /* Adjust height to be auto so it fits content */
   width: 8rem; /* Ensure width also fits content */
   margin: 1rem;
@@ -36,4 +44,5 @@
 .logos img {
   max-width: 100%;
   height: auto;
+  padding: .5rem 0; /* Image width adjusts to actual width */
 }
