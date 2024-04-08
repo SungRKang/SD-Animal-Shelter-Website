@@ -8,6 +8,14 @@
 
 #container > div {
   display: flex; /* Apply flex to direct children to manage size and alignment */
+  flex-direction: column; /* Stack children vertically */
+  /* align-items: center; Center-align items horizontally */
+  margin: 3rem; /* Adjusted for consistency */
+  color: black;
+}
+
+#container > div {
+  display: flex; /* Apply flex to direct children to manage size and alignment */
   justify-content: center;
   flex-direction: column; /* Stack children vertically */
   margin: 3rem; /* Adjusted for consistency */
