@@ -195,10 +195,10 @@
 
 .closeX {
     position: absolute;
-    top: 2rem; /* Adjust as needed */
-    right: 2rem; /* Adjust as needed */
-    color: white; /* Add color to make it visible */
-    font-size: x-large; /* Adjust as needed */
+    top: 2.5rem; /* Adjust as needed */
+    right: 2.25rem; /* Adjust as needed */
+    color: black; /* Add color to make it visible */
+    font-size: medium; /* Adjust as needed */
     cursor: pointer;
 }
 
@@ -217,7 +217,11 @@
     border-radius: 5px;
     font-family: "Libre Franklin", sans-serif;
     font-weight: bold;
+}
 
+.popup-box-bottom a{
+    color: white;
+    text-decoration: none;
 }
 
 .popup-box-bottom p{

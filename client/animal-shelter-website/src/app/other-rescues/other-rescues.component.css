@@ -91,9 +91,9 @@
 }
 .closeX {
     position: absolute;
-    top: 2rem; /* Adjust as needed */
-    right: 2rem; /* Adjust as needed */
-    color: white; /* Add color to make it visible */
-    font-size: x-large; /* Adjust as needed */
+    top: 2.6rem; /* Adjust as needed */
+    right: 2.5rem; /* Adjust as needed */
+    color: black; /* Add color to make it visible */
+    font-size: medium; /* Adjust as needed */
     cursor: pointer;
 }

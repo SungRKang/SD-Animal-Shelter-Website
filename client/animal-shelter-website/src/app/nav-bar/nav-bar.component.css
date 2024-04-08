@@ -143,4 +143,8 @@
     cursor: pointer;
   }
 
+  .donateButton a{
+    color: white;
+    text-decoration: none;
+  }
 
