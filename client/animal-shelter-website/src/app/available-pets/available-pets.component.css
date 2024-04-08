@@ -157,6 +157,7 @@
     justify-content: center; /* For flexbox alignment */
     align-items: center; /* For flexbox alignment */
     overflow-y: scroll;
+    z-index: 1;
 }
 
 
