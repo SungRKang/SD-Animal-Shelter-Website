@@ -1,39 +1,31 @@
-.container {
+#container {
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: white;
-  width: 100%;
+  margin: 0 3rem;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
 }
 
-
-.image-1 {
-  display: flex;
+#container > div {
+  display: flex; /* Apply flex to direct children to manage size and alignment */
   justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.image-1 img {
-  width: 100%; 
-  height: auto; 
-}
-
-.box-2 {
-  background-color: white;
-  margin-top: 0;
-  padding: 2rem;
-  width: 100%;
-  overflow: hidden;
+  flex-direction: column; /* Stack children vertically */
+  margin: 3rem; /* Adjusted for consistency */
   color: black;
-  font-size: 1.2rem;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
 }
-.box-3 {
-  background-color: #51a6ad;
-  margin-top: 0;
-  padding: 2rem;
-  width: 100%;
-  overflow: hidden;
-  color: white;
-  font-size: 1.2rem;
+
+.logos {
+  display: flex;
+  flex-direction: column; /* Stack flex items vertically */
+  justify-content: center; /* Vertically center content in the flex direction */
+  align-items: center; /* Horizontally center content in the cross-axis */
+  height: auto; /* Adjust height to be auto so it fits content */
+  width: 8rem; /* Ensure width also fits content */
+  margin: 1rem;
+}
+
+.logos img {
+  max-width: 100%;
+  height: auto;
 }
