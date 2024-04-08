@@ -1,0 +1,42 @@
+.pageHeader{
+    overflow: hidden;
+    text-align: center;
+}
+
+.image{
+    width: 20rem;
+    height: 22rem;
+    /* margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 2.5rem; */
+    margin: 5rem;
+}
+
+.imageGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+
+.nameTag{
+    width: 12rem;
+    height: 2.5rem;
+    background-color: #51a6ad;
+    margin-left: 5rem;
+    margin-bottom: 1.25rem;
+    margin-top: -5.25rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    align-items: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: bold;
+    text-align:  center;
+}
+
+.whitePaw{
+    filter: invert(100%) brightness(200%);
+}

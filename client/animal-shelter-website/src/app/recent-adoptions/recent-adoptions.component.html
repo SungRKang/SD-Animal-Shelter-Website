@@ -1,1 +1,16 @@
-<p>recent-adoptions works!</p>
+<!-- TITLE OF PAGE -->
+<div>
+    <h1 class="pageHeader"> Available Pets </h1>
+</div>
+
+<div class="imageGroup">
+    <div *ngFor="let dog of dogImages; let i = index">
+        
+        <img [src]="dog" class="image">
+        <div class="nameTag" >
+            {{dogNames[i]}} <span class="whitePaw"> &nbsp;🐾</span>
+        </div>
+           
+    </div>
+</div>
+
