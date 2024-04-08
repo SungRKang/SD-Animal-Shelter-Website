@@ -4,13 +4,9 @@
 }
 
 .image{
-    width: 20rem;
-    height: 22rem;
-    /* margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-    margin-top: 2.5rem; */
-    margin: 5rem;
+    width: 22rem;
+    height: 26rem;
+    margin: 4rem;
 }
 
 .imageGroup {
@@ -25,9 +21,9 @@
     width: 12rem;
     height: 2.5rem;
     background-color: #51a6ad;
-    margin-left: 5rem;
+    margin-left: 4rem;
     margin-bottom: 1.25rem;
-    margin-top: -5.25rem;
+    margin-top: -4.25rem;
     cursor: pointer;
     font-size: 2rem;
     color: white;
