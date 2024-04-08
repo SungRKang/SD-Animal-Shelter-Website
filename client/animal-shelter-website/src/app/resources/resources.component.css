@@ -22,6 +22,7 @@
   align-items: center; /* Horizontally center content in the cross-axis */
   height: auto; /* Adjust height to be auto so it fits content */
   width: 8rem; /* Ensure width also fits content */
+  margin: 1rem;
 }
 
 .logos img {
