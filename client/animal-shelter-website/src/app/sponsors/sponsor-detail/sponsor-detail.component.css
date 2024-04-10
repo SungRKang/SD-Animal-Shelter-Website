@@ -18,6 +18,7 @@ app-sponsor-detail .mat-dialog-content img {
   display: block;
   width: 120px; /* Adjust the size as necessary */
   height: auto;
+  border: none;
 }
 
 /* Target the Angular Material dialog title */

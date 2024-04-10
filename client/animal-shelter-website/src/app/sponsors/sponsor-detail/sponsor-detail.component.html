@@ -6,17 +6,29 @@
   <title>Sponsor Detail</title>
 </head>
 <body>
-  <div mat-dialog-content style="position: relative; padding: 20px; background-color: #3c728a; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-    <img [src]="data.logo" alt="{{ data.name }}" style="width: 500px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
+  <div mat-dialog-content style="position: relative; padding: 20px; background-color: #51a6ad; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <a href ="{{ data.url }}" target = "_blank">
+      <img [src]="data.logo" alt="{{ data.name }}" style="width: 500px; height: auto; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; border: none;">
+    </a>
     <div class="content" style="margin-top: 20px;">
       <h1 style="color: white; margin: 10px 0; font-size: 24px;">{{ data.name }}</h1>
       <p style="color: white; font-size: 16px;">{{ data.description }}</p>
     </div>
-    <!-- Replace 'path-to-your-close-button-image.png' with your actual image path -->
-    <button (click)="onClose()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; padding: 0; cursor: pointer;">
-      <img src="assets/icons/Paw-print.svg" alt="Close" style="width: 24px; height: auto;">
-    </button>
-    <!-- Add more sponsor details here -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Paw_%28Animal_Rights_symbol%29.png" class="closeButton" (click)="onClose()" style="
+      position: absolute;
+      top: 1.2rem; /* Adjust as needed */
+      right: 1.2rem; /* Adjust as needed */
+      width: 3rem;
+      height: 3rem;
+      filter: invert(100%);
+      cursor: pointer;"/>
+    <div class="closeX" (click)="onClose()" style="
+      position: absolute;
+      top: 2.7rem; /* Adjust as needed */
+      right: 2.5rem; /* Adjust as needed */
+      color: black; /* Add color to make it visible */
+      font-size: medium; /* Adjust as needed */
+      cursor: pointer;"> X </div>
   </div>
 </body>
 </html>

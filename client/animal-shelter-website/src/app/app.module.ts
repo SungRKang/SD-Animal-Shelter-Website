@@ -12,6 +12,9 @@ import { AppRoutingModule } from './app.routes';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.component';
 import { SponsorDetailComponent } from './sponsors/sponsor-detail/sponsor-detail.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { SponsorDetailComponent } from './sponsors/sponsor-detail/sponsor-detail
     HttpClientModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [DogService],
 })
