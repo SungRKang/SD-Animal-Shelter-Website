@@ -239,6 +239,7 @@
 
 
 <!-- POP UP BOX -->
+    <div *ngIf="popUpisOpen" class="overlay"></div>
     <div class="popup-container" *ngIf="popUpisOpen">
         <div class="popup-box-top">
             <img [src]="imageArray[index]" class="popup-image">
