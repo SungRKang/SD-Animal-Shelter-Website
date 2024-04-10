@@ -9,7 +9,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
       <p>Start: {{ data.start.toLocaleString() }}</p>
       <p>End: {{ data.end.toLocaleString() }}</p>
       <p>Description: {{ data.description || 'N/A' }}</p>
-      </div>
+      
+    </div>
   `,
   styles: [`
   .event-details-dialog {

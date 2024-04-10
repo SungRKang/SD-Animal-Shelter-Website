@@ -55,22 +55,32 @@ export class UpcomingEventsComponent {
   eventsPromise: Promise<EventInput[]> = Promise.resolve([
     {
       title: 'Adoption Event',
-      backgroundColor: 'green',
+      
       start: '2024-04-07T17:00:00',
       end: '2024-04-07T18:00:00',
-      description: 'This is an adoption event for dogs.'
+      description: 'This is an adoption event for dogs.',
     },
+    
     {
-      title: 'Event 2',
-      start: '2024-04-09T17:00:00',
-      end: '2023-04-09T18:00:00',
-      description: 'This is an adoption event for dogs.'
+      title: 'Donation Event',
+      backgroundColor: 'green',
+      start: '2024-04-10T13:00:00',
+      end: '2024-04-010T18:00:00',
+      description: 'This is an event to collect money for the shelter.'
     }
+    
     ,{
       title: 'Adoption Event',
       start: '2024-04-11T17:00:00',
       end: '2024-04-11T18:00:00',
       description: 'This is an adoption event for dogs.',
+      
+    }
+    ,{
+      title: 'Donation Event',
+      start: '2024-04-14T13:00:00',
+      end: '2024-04-14T16:00:00',
+      description: 'This is an event to collect money for the shelter.',
       
     },
   ]);
