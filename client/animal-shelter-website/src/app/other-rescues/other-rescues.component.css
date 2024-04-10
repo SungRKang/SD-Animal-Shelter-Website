@@ -3,13 +3,24 @@
     height: 8rem;
     margin: 5rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
+.image:hover {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+    cursor: grab;
+  }
 .square-image{
     width: 12rem;
     height: 12rem;
     margin: 5rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
+.square-image:hover {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+    cursor: grab;
+  }
 .popup-image{
     width: 18rem;
     height: 8rem;
