@@ -14,7 +14,6 @@ import { EventDetailsDialogComponent } from './event-details-dialog.component';
   imports: [CommonModule, FullCalendarModule],
   template: `
     <full-calendar #calendar [options]="calendarOptions" [events]="eventsPromise | async"></full-calendar>
-    
   `,
   styleUrls: ['./upcoming-events.component.css']
 })
@@ -30,7 +29,6 @@ export class UpcomingEventsComponent {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay',
-      
     },
     weekends: true,
     // Bind the handleDateClick method to the dateClick callback
@@ -45,7 +43,6 @@ export class UpcomingEventsComponent {
       const eventElement = info.el;
       const eventBackgroundColor = info.event.extendedProps['backgroundColor'] || '#3788d8';
       const eventTextColor = info.event.textColor || 'white';
-      
       eventElement.style.color = eventTextColor;
       eventElement.style.backgroundColor = eventBackgroundColor;
     },
@@ -55,33 +52,32 @@ export class UpcomingEventsComponent {
   eventsPromise: Promise<EventInput[]> = Promise.resolve([
     {
       title: 'Adoption Event',
-      
       start: '2024-04-07T17:00:00',
       end: '2024-04-07T18:00:00',
       description: 'This is an adoption event for dogs.',
+      image: 'assets/images/fund.jpg'
     },
-    
     {
       title: 'Donation Event',
       backgroundColor: 'green',
       start: '2024-04-10T13:00:00',
       end: '2024-04-010T18:00:00',
-      description: 'This is an event to collect money for the shelter.'
-    }
-    
-    ,{
+      description: 'This is an event to collect money for the shelter.',
+      image: 'assets/images/fund.jpg'
+    },
+    {
       title: 'Adoption Event',
       start: '2024-04-11T17:00:00',
       end: '2024-04-11T18:00:00',
       description: 'This is an adoption event for dogs.',
-      
-    }
-    ,{
+      image: 'assets/backgrounds/banner.jpg'
+    },
+    {
       title: 'Donation Event',
       start: '2024-04-14T13:00:00',
       end: '2024-04-14T16:00:00',
       description: 'This is an event to collect money for the shelter.',
-      
+      image: 'assets/backgrounds/banner.jpg'
     },
   ]);
 
@@ -100,13 +96,11 @@ export class UpcomingEventsComponent {
       title: info.event.title,
       start: info.event.start,
       end: info.event.end,
-      description: info.event.extendedProps.description
+      description: info.event.extendedProps.description,
+      image: info.event.extendedProps.image // Include the image property
     };
 
     // Open the event details dialog and pass the event data
-    this.dialog.open(EventDetailsDialogComponent, {
-      data: eventData
-    });
+    this.dialog.open(EventDetailsDialogComponent, { data: eventData });
   }
-
 }
