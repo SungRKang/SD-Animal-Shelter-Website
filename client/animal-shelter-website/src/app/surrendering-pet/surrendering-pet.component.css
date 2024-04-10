@@ -1,14 +1,17 @@
+
+
 .title-image-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Adjust the space between the text block and the image */
+  gap: 120px; /* Adjust the space between the text block and the image */
   margin-bottom: 20px; /* Adds some space before the form starts */
 }
 
 .title-paragraph-container {
-
-  max-width: 30%; 
+  margin-left: -43px;
+  max-width: 23%; 
+  width: calc(50% - 50px);
 }
 
 .surrendering-dog-image {
@@ -118,5 +121,12 @@
 }
 
 .submit-button button:hover {
-  background-color: #38ef7d; /* Secondary */
+  background-color: #093f52; /* Secondary */
+}
+
+.submit-button button:disabled {
+  background-color: grey; /* grey color */
+  color: #666666; /* darker text color to indicate it's not active */
+  cursor: not-allowed; /* shows a 'not-allowed' cursor when hovering */
+  border: 1px solid #999999; 
 }
