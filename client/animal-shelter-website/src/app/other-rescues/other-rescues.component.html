@@ -27,6 +27,7 @@
     (click)="displayPopUp(8)" (click)="rectangle()">
 </div>
 
+<div *ngIf="showPopUp" class="overlay"></div>
 <div *ngIf="showPopUp" class="popup-container">
     <div class="popup-contents">
         <a href="{{site}}" target="_blank">
