@@ -31,7 +31,6 @@
   padding-left: 10%;
   text-align: left;
   margin: 20px 0;
-  font-size: 40px;
   position: relative;
   z-index: 2;
 }
@@ -65,7 +64,7 @@
   color: black;
   margin: 0;
   max-width: 800px;
-  font-size: 25px;
+  font-size: 1.2rem;
   position: relative;
   z-index: 2;
   text-align: left;

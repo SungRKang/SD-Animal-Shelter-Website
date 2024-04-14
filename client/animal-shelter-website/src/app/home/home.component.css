@@ -24,6 +24,7 @@
     font-family: "Libre Franklin", sans-serif;
     font-weight: bold;
     font-size: 5rem;
+    color: white;
 }
 
 
@@ -41,13 +42,13 @@ p {
     align-content: center;
     justify-content: center;
     text-align: center;
+    background-color: #51a6ad;
   }
 
   #container div{
     align-items: center;
     margin: 3rem 3rem;
     width: 100%;
-    color: white;
   }
 
 
