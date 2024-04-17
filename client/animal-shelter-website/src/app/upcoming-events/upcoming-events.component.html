@@ -1,1 +1,2 @@
-<p>upcoming-events works!</p>
+<full-calendar #calendar [options]="calendarOptions" [events]="eventsPromise | async"></full-calendar>
+<button (click)="toggleWeekends()">Toggle Weekends</button>
