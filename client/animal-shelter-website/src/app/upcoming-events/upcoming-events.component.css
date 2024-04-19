@@ -1,0 +1,18 @@
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  transition: transform var(--mat-dialog-transition-duration, 0ms) 0ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Limit the calendar width and center it horizontally */
+full-calendar {
+  max-width: 1400px;
+  margin: 20px auto;
+}
+full-calendar title {
+  background-color: aqua;
+}
+/* Adjust the height of the calendar view */
+full-calendar .fc-view-harness {
+  height: 1400px;
+  
+}
+
